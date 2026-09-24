@@ -421,43 +421,51 @@ body.locked{
 
 #honoured-section{
 
-    color:#f7f3f4;
+    /* =========================================================
+   HONOURED
+   DARK BLUE → PURPLE → DUSTY PINK
+   SMOOTH FULL-PAGE BLEND
+========================================================= */
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(30,34,47,.98) 0%,
-            rgba(45,48,66,.96) 22%,
-            rgba(76,67,87,.94) 48%,
-            rgba(118,79,101,.92) 72%,
-            rgba(168,109,128,.88) 100%
-        );
+#honoured-section{
 
     position:relative;
 
+    color:#f7f3f4;
+
     overflow:hidden;
-}
-
-#honoured-section::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:-1px;
-
-    height:45px;
 
     background:
         linear-gradient(
             180deg,
-            rgba(168,109,128,0),
-            rgba(201,133,150,.38)
-        );
 
-    pointer-events:none;
+            #1e222f 0%,
+
+            #303448 18%,
+
+            #4a465c 38%,
+
+            #615568 55%,
+
+            #806074 70%,
+
+            #9b7180 82%,
+
+            #b87a89 91%,
+
+            rgba(201,133,150,0) 100%
+        );
+}
+
+
+#honoured-section .section-inner{
+
+    max-width:430px;
+
+    position:relative;
+
+    z-index:2;
+}
 }
 
 #honoured-section .section-inner{
