@@ -10,7 +10,7 @@
 
 <meta property="og:title" content="Zainab & Mizan">
 <meta property="og:description" content="A beautiful beginning of forever.">
-<meta property="og:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.JPG">
+<meta property="og:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ivoryvows.github.io/Aqd-al-Qalb-/">
 
@@ -180,7 +180,9 @@ body.locked{
 
     background:#171a24;
 
-    overflow:hidden;
+    /* CHANGED:
+       Allows scroll hint to sit below video */
+    overflow:visible;
 }
 
 #curtain-video{
@@ -223,7 +225,10 @@ body.locked{
 
     position:absolute;
 
-    bottom:5px;
+    /* CHANGED:
+       Moves it below the curtain/video */
+    bottom:-30px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -416,13 +421,6 @@ body.locked{
 
 /* =========================================================
    HONOURED
-   SAME COLOR — SMOOTH BLEND
-========================================================= */
-
-#honoured-section{
-
-    /* =========================================================
-   HONOURED
    DARK BLUE → PURPLE → DUSTY PINK
    SMOOTH FULL-PAGE BLEND
 ========================================================= */
@@ -433,7 +431,7 @@ body.locked{
 
     color:#f7f3f4;
 
-    overflow:hidden;
+    overflow:visible;
 
     background:
         linear-gradient(
@@ -451,22 +449,38 @@ body.locked{
 
             #9b7180 82%,
 
-            #b87a89 91%,
+            #b87a89 92%,
 
-            rgba(201,133,150,0) 100%
+            #c98596 100%
         );
 }
 
 
-#honoured-section .section-inner{
+#honoured-section::after{
 
-    max-width:430px;
+    content:"";
 
-    position:relative;
+    position:absolute;
 
-    z-index:2;
+    left:0;
+    right:0;
+
+    bottom:-1px;
+
+    height:70px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(201,133,150,0),
+            rgba(238,205,212,1)
+        );
+
+    pointer-events:none;
+
+    z-index:1;
 }
-}
+
 
 #honoured-section .section-inner{
 
