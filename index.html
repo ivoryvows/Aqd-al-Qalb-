@@ -6,18 +6,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mizan & Zainab — Wedding Invitation</title>
+<title>Zainab & Mizan — Wedding Invitation</title>
 
-   <meta property="og:title" content="Mizan & Zainab">
+<meta property="og:title" content="Zainab & Mizan">
 <meta property="og:description" content="A beautiful beginning of forever.">
 <meta property="og:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ivoryvows.github.io/Aqd-al-Qalb-/">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mizan & Zainab">
+<meta name="twitter:title" content="Zainab & Mizan">
 <meta name="twitter:description" content="A beautiful beginning of forever.">
 <meta name="twitter:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -63,8 +64,6 @@ body{
 
     background-attachment:fixed;
 }
-
-/* Before opening */
 
 body.locked{
     height:100vh;
@@ -149,8 +148,6 @@ body.locked{
     background:#171a24;
 }
 
-/* Invisible opening tap */
-
 #opening-tap{
 
     position:absolute;
@@ -203,8 +200,6 @@ body.locked{
 
     will-change:transform;
 }
-
-/* Very subtle layer */
 
 .curtain-soft-layer{
 
@@ -421,6 +416,7 @@ body.locked{
 
 /* =========================================================
    HONOURED
+   SAME COLOR — SMOOTH BLEND
 ========================================================= */
 
 #honoured-section{
@@ -430,15 +426,47 @@ body.locked{
     background:
         linear-gradient(
             180deg,
-            #1e222f 0%,
-            #343749 35%,
-            #615568 70%,
-            #9b7180 100%
+            rgba(30,34,47,.98) 0%,
+            rgba(45,48,66,.96) 22%,
+            rgba(76,67,87,.94) 48%,
+            rgba(118,79,101,.92) 72%,
+            rgba(168,109,128,.88) 100%
         );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+#honoured-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:-1px;
+
+    height:45px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(168,109,128,0),
+            rgba(201,133,150,.38)
+        );
+
+    pointer-events:none;
 }
 
 #honoured-section .section-inner{
+
     max-width:430px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .honoured-divider{
@@ -497,7 +525,7 @@ body.locked{
 
 
 /* =========================================================
-   AYAT — SEPARATE SECTION
+   AYAT
 ========================================================= */
 
 #ayat-section{
@@ -547,7 +575,7 @@ body.locked{
 
 
 /* =========================================================
-   SCRATCH — SEPARATE SECTION
+   SCRATCH
 ========================================================= */
 
 #scratch-section{
@@ -591,9 +619,6 @@ body.locked{
         0 auto 17px;
 }
 
-
-/* Heart outer */
-
 .heart-border{
 
     position:absolute;
@@ -618,9 +643,6 @@ body.locked{
 
     pointer-events:none;
 }
-
-
-/* Reveal content */
 
 .revealed-content{
 
@@ -693,9 +715,6 @@ body.locked{
     margin-top:4px;
 }
 
-
-/* Scratch canvas */
-
 #scratch-canvas{
 
     position:absolute;
@@ -716,12 +735,6 @@ body.locked{
             'M180,315 C180,315 320,220 320,130 C320,78 281,38 236,38 C205,38 180,63 180,63 C180,63 155,38 124,38 C79,38 40,78 40,130 C40,220 180,315 180,315 Z'
         );
 }
-
-
-/* NO TEXT ON SCRATCH HEART */
-
-
-/* Tiny sparkles */
 
 .scratch-sparkles{
 
@@ -1279,6 +1292,7 @@ body.locked{
 
 /* =========================================================
    DRESS CODE
+   COLOR CIRCLES REMOVED
 ========================================================= */
 
 #dress-section{
@@ -1291,35 +1305,6 @@ body.locked{
             rgba(247,231,235,.9)
         );
 }
-
-.color-shades{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:8px;
-
-    margin-bottom:5px;
-}
-
-.color-circle{
-
-    width:14px;
-    height:14px;
-
-    border-radius:50%;
-
-    border:
-        1px solid rgba(108,36,50,.2);
-}
-
-.c1{background:#f3dcdf;}
-.c2{background:#d8a4b1;}
-.c3{background:#b5838d;}
-.c4{background:#6c2432;}
-.c5{background:#e5b299;}
-.c6{background:#000;}
 
 .cute-message{
 
@@ -1366,68 +1351,6 @@ body.locked{
 
     padding:
         0 15px;
-}
-
-
-/* =========================================================
-   PRE-WEDDING
-========================================================= */
-
-#prewedding-section{
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(247,231,235,.9),
-            rgba(244,220,226,.9),
-            rgba(239,207,215,.9)
-        );
-}
-
-.popper-icon{
-
-    margin-bottom:3px;
-}
-
-.popper-icon svg{
-
-    width:28px;
-    height:28px;
-
-    stroke:#6c2432;
-
-    fill:none;
-}
-
-.event-block{
-
-    margin-bottom:17px;
-}
-
-.event-block:last-child{
-
-    margin-bottom:0;
-}
-
-.event-name{
-
-    font-size:1.25rem;
-
-    margin-bottom:3px;
-}
-
-.event-date{
-
-    font-size:.88rem;
-
-    margin-bottom:2px;
-}
-
-.event-location{
-
-    font-size:.85rem;
-
-    color:#7d424e;
 }
 
 
@@ -1681,8 +1604,6 @@ body.locked{
     <div class="curtain-soft-layer"></div>
 
 
-    <!-- NOT CLICKABLE -->
-
     <div id="scrollHint">
 
         <div class="scroll-text">
@@ -1723,15 +1644,18 @@ body.locked{
     <div class="section-inner">
 
         <div class="honoured-divider">
+
             <span class="honoured-heart">
                 ♥
             </span>
+
         </div>
 
 
         <div class="honoured-text">
 
             We are honored to welcome you to the
+
             <br>
 
             Wedding ceremony of Zainab &amp; Mizan
@@ -1739,6 +1663,7 @@ body.locked{
             <br>
 
             As they begin their journey together in faith
+
             <br>
 
             and love,
@@ -1746,6 +1671,7 @@ body.locked{
             <br><br>
 
             we thank you for being part of this
+
             <br>
 
             blessed occasion
@@ -1771,7 +1697,7 @@ body.locked{
 
 
 <!-- =======================================================
-     AYAT — SEPARATE
+     AYAT
 ======================================================= -->
 
 <section
@@ -1817,7 +1743,7 @@ body.locked{
 
 
 <!-- =======================================================
-     SCRATCH — SEPARATE
+     SCRATCH
 ======================================================= -->
 
 <section
@@ -1865,9 +1791,6 @@ body.locked{
             ></canvas>
 
 
-            <!-- NO REVEAL TEXT -->
-
-
             <div class="scratch-sparkles">
 
                 <span class="spark"></span>
@@ -1882,8 +1805,6 @@ body.locked{
 
         </div>
 
-
-        <!-- SAVE THE DATE -->
 
         <div class="save-date-container">
 
@@ -2130,10 +2051,6 @@ body.locked{
             </div>
 
 
-                </p>
-
-            </div>
-
         </div>
 
     </div>
@@ -2170,9 +2087,10 @@ body.locked{
 
         <div class="venue-address">
 
-            Sarkhej - Gandhinagar Highway, 
-           Makarba, Ahmedabad, Gujarat 380015, 
-           
+            Sarkhej - Gandhinagar Hwy,
+            Makarba, Ahmedabad, Gujarat 380015,
+            India
+
         </div>
 
 
@@ -2289,7 +2207,7 @@ body.locked{
 
 
         <a
-            href="https://maps.google.com/?cid=13028526379322470877&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ&utm_source=gemini"
+            href="https://www.google.com/maps/search/?api=1&query=YMCA+Club%2C+Sarkhej+-+Gandhinagar+Hwy%2C+Makarba%2C+Ahmedabad%2C+Gujarat+380015%2C+India"
             target="_blank"
             rel="noopener"
             class="map-btn"
@@ -2312,8 +2230,6 @@ body.locked{
 >
 
     <div class="section-inner">
-
-        </div>
 
 
         <div class="script-title">
@@ -2358,10 +2274,10 @@ body.locked{
             Suit or traditional formal wear
         </div>
 
+
     </div>
 
 </section>
-
 
 
 <!-- =======================================================
@@ -2484,6 +2400,7 @@ body.locked{
         <div class="celebrate-text">
 
             We can't wait to celebrate
+
             <br>
 
             <span
@@ -2500,7 +2417,9 @@ body.locked{
 
 
         <div class="names-text">
-            with regards Hussain ali rajabali kanani &amp; Kanani Family
+
+            with regards Hussain ali rajjabali kanani &amp; Kanani Family
+
         </div>
 
 
@@ -2637,7 +2556,9 @@ musicButton.addEventListener(
 curtainVideo.pause();
 
 try{
+
     curtainVideo.currentTime = 0;
+
 }catch(error){}
 
 
@@ -2653,13 +2574,9 @@ openingTap.addEventListener(
             "none";
 
 
-        /* Poster disappears */
-
         openingPoster.style.opacity =
             "0";
 
-
-        /* Music starts */
 
         try{
 
@@ -2681,8 +2598,6 @@ openingTap.addEventListener(
         }
 
 
-        /* Show opening video */
-
         openingVideo.style.display =
             "block";
 
@@ -2696,8 +2611,6 @@ openingTap.addEventListener(
             }
         );
 
-
-        /* Play opening video */
 
         try{
 
@@ -2732,11 +2645,6 @@ function startCurtainTransition(){
     curtainStarted = true;
 
 
-    /*
-       Start curtain BEFORE
-       opening video completely finishes.
-    */
-
     try{
 
         curtainVideo.currentTime = 0;
@@ -2756,10 +2664,6 @@ function startCurtainTransition(){
     );
 
 
-    /*
-       Unlock scrolling during transition.
-    */
-
     setTimeout(
         function(){
 
@@ -2770,23 +2674,10 @@ function startCurtainTransition(){
                 "locked"
             );
 
-            /*
-               Show scroll indicator.
-            */
-
-            scrollHint.classList.add(
-                "show"
-            );
-
         },
         80
     );
 
-
-    /*
-       Remove opening screen
-       after fade completes.
-    */
 
     setTimeout(
         function(){
@@ -2834,10 +2725,6 @@ openingVideo.addEventListener(
 );
 
 
-/*
-   Fallback
-*/
-
 openingVideo.addEventListener(
     "ended",
     function(){
@@ -2854,7 +2741,7 @@ openingVideo.addEventListener(
 
 /* =========================================================
    CURTAIN
-   FREEZE 1.5 SECONDS BEFORE END
+   FREEZE EXACTLY 1.5 SECONDS BEFORE END
 ========================================================= */
 
 let curtainFrozen = false;
@@ -2864,9 +2751,7 @@ curtainVideo.addEventListener(
     "timeupdate",
     function(){
 
-        if(
-            curtainFrozen
-        ){
+        if(curtainFrozen){
             return;
         }
 
@@ -2888,20 +2773,16 @@ curtainVideo.addEventListener(
                 curtainFrozen = true;
 
 
-                /*
-                   Freeze here.
+                try{
 
-                   This means the final
-                   text remains visible
-                   instead of disappearing.
-                */
+                    curtainVideo.currentTime =
+                        freezeAt;
+
+                }catch(error){}
+
 
                 curtainVideo.pause();
 
-
-                /*
-                   Allow scrolling.
-                */
 
                 document.body.classList.remove(
                     "locked"
@@ -2920,23 +2801,21 @@ curtainVideo.addEventListener(
 );
 
 
-/*
-   Extra protection:
-   if browser somehow reaches the end,
-   keep final frame visible.
-*/
-
 curtainVideo.addEventListener(
     "ended",
     function(){
 
-        curtainVideo.pause();
+        if(!curtainFrozen){
 
-        curtainFrozen = true;
+            curtainVideo.pause();
 
-        scrollHint.classList.add(
-            "show"
-        );
+            curtainFrozen = true;
+
+            scrollHint.classList.add(
+                "show"
+            );
+
+        }
 
     }
 );
@@ -3113,10 +2992,6 @@ function scratch(event){
         "destination-out";
 
 
-    /*
-       Bigger brush = faster.
-    */
-
     const brushRadius = 22;
 
 
@@ -3197,11 +3072,6 @@ function scratch(event){
     lastY = position.y;
 
 
-    /*
-       Don't calculate pixels
-       on every single movement.
-    */
-
     const now =
         performance.now();
 
@@ -3247,10 +3117,6 @@ function checkScratchProgress(){
     let checked = 0;
 
 
-    /*
-       Check every 40th byte.
-    */
-
     for(
         let i = 3;
         i < pixels.length;
@@ -3273,10 +3139,6 @@ function checkScratchProgress(){
     const percentage =
         (transparent / checked) * 100;
 
-
-    /*
-       43% scratched = reveal.
-    */
 
     if(
         percentage >= 43
@@ -3537,7 +3399,7 @@ function startConfetti(){
 
 
 /* =========================================================
-   SAVE THE DATE — CALENDAR
+   SAVE THE DATE — NOVEMBER 29, 2026
 ========================================================= */
 
 const saveDateButton =
@@ -3551,10 +3413,10 @@ saveDateButton.addEventListener(
     function(){
 
         const startDate =
-            "20261219";
+            "20261129";
 
         const endDate =
-            "20261220";
+            "20261130";
 
 
         const calendarTitle =
@@ -3566,7 +3428,7 @@ saveDateButton.addEventListener(
 
 
         const calendarLocation =
-            "The Taj Mahal Palace, Mumbai";
+            "YMCA Club, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015, India";
 
 
         const dtStamp =
@@ -3582,7 +3444,7 @@ VERSION:2.0
 PRODID:-//Wedding Invitation//Mizan & Zainab//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-UID:mizan-zainab-wedding-20261219@wedding
+UID:mizan-zainab-wedding-20261129@wedding
 DTSTAMP:${dtStamp}
 DTSTART;VALUE=DATE:${startDate}
 DTEND;VALUE=DATE:${endDate}
@@ -3722,12 +3584,12 @@ setInterval(
 
 
 /* =========================================================
-   COUNTDOWN
+   COUNTDOWN — NOVEMBER 29, 2026
 ========================================================= */
 
 const targetDate =
     new Date(
-        "December 19, 2026 23:59:59"
+        "November 29, 2026 23:59:59"
     ).getTime();
 
 
