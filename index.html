@@ -27,6 +27,91 @@
 
 <style>
 
+   /* =========================================================
+   TINY FALLING PETALS — AYAT + GIFTS
+========================================================= */
+
+.petals-layer{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.petal{
+    position:absolute;
+    top:-12px;
+
+    width:5px;
+    height:8px;
+
+    border-radius:70% 30% 70% 30%;
+
+    background:rgba(255,182,193,.78);
+
+    opacity:.75;
+
+    animation:
+        petalFall linear infinite,
+        petalSway ease-in-out infinite alternate;
+
+    filter:blur(.1px);
+}
+
+.petal:nth-child(3n){
+    width:4px;
+    height:6px;
+    background:rgba(255,205,214,.8);
+}
+
+.petal:nth-child(4n){
+    width:3px;
+    height:5px;
+    background:rgba(225,145,162,.7);
+}
+
+.petal:nth-child(5n){
+    width:5px;
+    height:5px;
+    background:rgba(255,225,230,.85);
+}
+
+@keyframes petalFall{
+
+    0%{
+        transform:
+            translateY(-15px)
+            rotate(0deg);
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+}
+
+@keyframes petalSway{
+
+    0%{
+        margin-left:-18px;
+    }
+
+    100%{
+        margin-left:18px;
+    }
+}
+
+
+/* Keep section content above petals */
+
+#ayat-section .section-inner,
+#gifts-section .section-inner{
+    position:relative;
+    z-index:2;
+}
+   
 /* =========================================================
    GLOBAL
 ========================================================= */
@@ -1727,6 +1812,7 @@ body.locked{
     id="ayat-section"
 >
 
+   <div class="petals-layer" id="ayat-petals"></div>
     <div class="section-inner">
 
         <div class="script-title">
@@ -2311,6 +2397,7 @@ body.locked{
     id="gifts-section"
 >
 
+   <div class="petals-layer" id="gifts-petals"></div>
     <div class="section-inner">
 
         <div class="icon-container">
@@ -3746,6 +3833,44 @@ setInterval(
     1000
 );
 
+  /* TINY FALLING PETALS */
+
+function createPetals(layerId, amount){
+
+    const layer = document.getElementById(layerId);
+
+    if(!layer) return;
+
+    for(let i = 0; i < amount; i++){
+
+        const petal = document.createElement("span");
+
+        petal.className = "petal";
+
+        petal.style.left =
+            Math.random() * 100 + "%";
+
+        petal.style.animationDuration =
+            (Math.random() * 7 + 7) + "s";
+
+        petal.style.animationDelay =
+            (Math.random() * -12) + "s";
+
+        petal.style.opacity =
+            (Math.random() * .45 + .4);
+
+        petal.style.transform =
+            "rotate(" +
+            Math.random() * 360 +
+            "deg)";
+
+        layer.appendChild(petal);
+    }
+}
+
+createPetals("ayat-petals", 85);
+createPetals("gifts-petals", 85);
+   
 </script>
 
 </body>
