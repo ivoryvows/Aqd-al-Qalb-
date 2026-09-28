@@ -47,10 +47,15 @@ body{
     color:#6c2432;
     overflow-x:hidden;
 
-    /* CONTINUOUS ROYAL GRADIENT
-       Dark Purple → Mauve → Pink → Pastel Pink
-       → Pastel Green → Pastel Yellow → Pastel Beige
-       → Pastel Pink → Pink
+    /* ONE CONTINUOUS GRADIENT
+       Starts after curtains with MAUVE
+       → pinkish
+       → pastel pink
+       → pastel green at Mehfil
+       → pastel yellow at Haldi
+       → beige/golden at Nikkah
+       → pastel pink
+       → pink
     */
 
     background:
@@ -71,22 +76,26 @@ body{
         ),
         linear-gradient(
             180deg,
-            #241634 0%,
-            #4b355c 10%,
-            #72506f 20%,
-            #a56583 30%,
-            #cf839d 39%,
-            #edb8c5 48%,
-            #d4e6d7 59%,
-            #e7edc2 68%,
-            #f4edbd 75%,
-            #eadfca 83%,
-            #efc1cc 92%,
-            #d9899d 100%
+            #76516f 0%,
+            #875878 7%,
+            #a76583 15%,
+            #c77f99 24%,
+            #df9faf 32%,
+            #efc3cb 40%,
+            #ebcbd0 46%,
+            #e0ecdf 52%,
+            #d5e8d8 59%,
+            #e8edc6 65%,
+            #f4edbd 70%,
+            #f1e5ca 75%,
+            #eadcc5 81%,
+            #e7d6b8 86%,
+            #efc4cc 92%,
+            #d98a9d 100%
         );
 
-    background-attachment:fixed;
     background-size:100% 100%;
+    background-attachment:scroll;
 }
 
 body.locked{
@@ -202,7 +211,7 @@ body.locked{
     min-height:100vh;
     min-height:100dvh;
 
-    background:#171a24;
+    background:transparent;
 
     overflow:hidden;
 }
@@ -1188,9 +1197,6 @@ body.locked{
         190px 210px,
         220px 190px,
         160px 180px;
-
-    /* sparkle remains delicate;
-       background itself does NOT move */
 }
 
 .event-video-section .section-inner{
@@ -1801,7 +1807,7 @@ body::before{
 
 <!-- =======================================================
      MUSIC
-======================================================= -->
+========================================================= -->
 
 <button
     id="music-button"
@@ -1814,7 +1820,7 @@ body::before{
 
 <!-- =======================================================
      HONOURED
-======================================================= -->
+========================================================= -->
 
 <section
     class="invitation-section"
@@ -3235,6 +3241,7 @@ function revealScratch(){
 
 
     startConfetti();
+
 
 }
 
