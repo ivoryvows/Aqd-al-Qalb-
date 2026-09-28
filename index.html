@@ -422,18 +422,17 @@ body.locked{
 
     overflow:visible;
 
-    background:rgba(201,133,150,.98);
+    margin-top:-1px;
+
+    background:#c98596;
 }
 
-/* Smooth dark-to-rose transition moved onto the video */
+/* The dark-to-rose gradient now sits on the video transition
+   so there is no visible hard line before HONOURED. */
 #milad-section{
-
     position:relative;
-
     width:100%;
-
     overflow:hidden;
-
     background:
         linear-gradient(
             180deg,
@@ -449,30 +448,22 @@ body.locked{
 }
 
 #milad-section::after{
-
     content:"";
-
     position:absolute;
-
     left:0;
     right:0;
-
     bottom:0;
-
-    height:28%;
-
+    height:38%;
     pointer-events:none;
-
     z-index:2;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(201,133,150,0),
-            rgba(201,133,150,.96) 92%,
-            rgba(201,133,150,1) 100%
-        );
+    background:linear-gradient(
+        to bottom,
+        rgba(201,133,150,0),
+        rgba(201,133,150,.96) 92%,
+        rgba(201,133,150,1) 100%
+    );
 }
+
 
 #honoured-section .section-inner{
 
@@ -566,7 +557,7 @@ body.locked{
 
 
 /* =========================================================
-   LIGHT FALLING FLOWER PETALS
+   LIGHT FALLING FLOWER PETALS — ALL NON-VIDEO FRAMES
 ========================================================= */
 
 .global-petals{
@@ -593,9 +584,9 @@ body.locked{
 
     border-radius:70% 30% 70% 30%;
 
-    background:rgba(255,245,248,.72);
+    background:rgba(255,245,248,.58);
 
-    opacity:.45;
+    opacity:.34;
 
     animation:
         petalFall linear infinite,
@@ -628,6 +619,8 @@ body.locked{
     background:rgba(255,248,250,.58);
 }
 
+/* PETAL ANIMATION */
+
 @keyframes petalFall{
 
     0%{
@@ -653,11 +646,6 @@ body.locked{
         margin-left:18px;
     }
 }
-
-
-/* =========================================================
-   ARABIC / AYAT
-========================================================= */
 
 .arabic-text{
 
@@ -708,8 +696,8 @@ body.locked{
             rgba(232,193,203,.9) 100%
         );
 
-    padding-top:40px;
-    padding-bottom:40px;
+    padding-top:22px;
+    padding-bottom:22px;
 }
 
 .scratch-title{
@@ -720,7 +708,7 @@ body.locked{
 
     color:#6b3e43;
 
-    margin-bottom:18px;
+    margin-bottom:12px;
 
     transition:
         opacity .8s ease,
@@ -1007,106 +995,58 @@ body.locked{
 
 
 /* =========================================================
-   PICTURES
+   CONFETTI
 ========================================================= */
 
-#pictures-section{
+#confetti-box{
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(247,226,231,.88),
-            rgba(250,240,242,.88),
-            rgba(242,216,222,.88)
-        );
-}
+    position:fixed;
 
-.slider-container{
+    inset:0;
 
-    position:relative;
+    z-index:9990;
 
-    width:100%;
-
-    height:220px;
-
-    border-radius:12px;
+    pointer-events:none;
 
     overflow:hidden;
 
-    background:#fff;
-
-    border:4px solid #fff;
-
-    box-shadow:
-        0 8px 25px rgba(92,58,61,.12);
+    display:none;
 }
 
-.slides{
+.confetti{
 
-    display:flex;
+    position:absolute;
 
-    width:300%;
-    height:100%;
+    top:-20px;
 
-    transition:
-        transform .6s ease-in-out;
+    animation:
+        confettiFall linear forwards;
 }
 
-.slide{
+@keyframes confettiFall{
 
-    width:33.333333%;
+    from{
 
-    height:100%;
+        transform:
+            translateY(0)
+            rotate(0deg);
 
-    flex-shrink:0;
-}
+        opacity:1;
+    }
 
-.slide img{
+    to{
 
-    width:100%;
-    height:100%;
+        transform:
+            translateY(110vh)
+            rotate(720deg);
 
-    object-fit:cover;
-
-    display:block;
-}
-
-.slider-dots{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:6px;
-
-    margin-top:9px;
-}
-
-.dot{
-
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#d1b3b6;
-
-    transition:
-        all .3s ease;
-}
-
-.dot.active{
-
-    width:22px;
-
-    border-radius:4px;
-
-    background:#8c3b46;
+        opacity:.15;
+    }
 }
 
 
 /* =========================================================
-   COUNTDOWN
+   COUNTDOWN + TIMELINE
 ========================================================= */
 
 #countdown-section{
@@ -1277,71 +1217,85 @@ body.locked{
     background:
         linear-gradient(
             180deg,
-            rgba(242,216,221,.88),
-            rgba(247,231,235,.88),
-            rgba(238,207,215,.88)
+            rgba(248,235,239,.9),
+            rgba(244,220,226,.9),
+            rgba(240,210,218,.9)
         );
 }
 
-.venue-title{
+.venue-icon{
 
-    font-family:'Great Vibes',cursive;
+    font-size:1.3rem;
 
-    font-size:2.5rem;
+    display:inline-block;
 
-    color:#6c2432;
+    border:
+        1px solid #6c2432;
 
-    margin-bottom:7px;
+    border-radius:50%;
+
+    padding:6px;
 }
 
 .venue-name{
 
-    font-size:1.2rem;
+    font-size:1.35rem;
 
     font-weight:600;
 
-    color:#6c2432;
-
-    margin-bottom:6px;
+    margin:
+        4px 0 7px;
 }
 
 .venue-address{
 
-    font-size:.85rem;
-
-    line-height:1.5;
+    font-size:.9rem;
 
     color:#7d424e;
 
-    margin-bottom:13px;
+    line-height:1.5;
+
+    padding:
+        0 15px;
+
+    margin-bottom:14px;
+}
+
+.venue-illustration{
+
+    width:100%;
+
+    max-width:280px;
+
+    margin:
+        10px auto;
+}
+
+.venue-illustration svg{
+
+    width:100%;
+    height:auto;
 }
 
 .map-btn{
 
     display:inline-block;
 
-    text-decoration:none;
+    background:#6c2432;
 
     color:white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #d95c73,
-            #c84760
-        );
+    text-decoration:none;
 
     padding:
-        10px 20px;
+        11px 25px;
 
-    border-radius:7px;
+    border-radius:6px;
 
-    font-size:11px;
-
-    letter-spacing:1.4px;
+    font-size:.92rem;
 
     box-shadow:
-        0 5px 15px rgba(150,60,80,.18);
+        0 4px 10px rgba(108,36,50,.15);
 }
 
 
@@ -1354,101 +1308,119 @@ body.locked{
     background:
         linear-gradient(
             180deg,
-            rgba(247,231,235,.88),
-            rgba(244,225,229,.88),
-            rgba(242,216,221,.88)
+            rgba(241,215,221,.9),
+            rgba(238,209,216,.9),
+            rgba(247,231,235,.9)
         );
 }
 
-.dress-title{
+.cute-message{
 
-    font-family:'Great Vibes',cursive;
+    font-style:italic;
 
-    font-size:2.5rem;
-
-    color:#6c2432;
-
-    margin-bottom:8px;
-}
-
-.dress-description{
-
-    font-size:.85rem;
+    font-size:.9rem;
 
     color:#7d424e;
 
-    line-height:1.55;
+    line-height:1.5;
 
     margin-bottom:17px;
 }
 
-.palette-container{
+.category-title{
 
-    display:flex;
+    font-size:1.2rem;
 
-    justify-content:center;
+    font-weight:600;
 
-    align-items:center;
-
-    gap:11px;
-
-    margin-top:10px;
+    margin:
+        14px 0 6px;
 }
 
-.color-circle{
+.category-line{
 
-    width:42px;
-    height:42px;
+    width:40px;
 
-    border-radius:50%;
+    height:1px;
 
-    border:2px solid rgba(255,255,255,.8);
+    background:#d5a5ac;
 
-    box-shadow:
-        0 3px 10px rgba(80,40,50,.13);
+    margin:
+        0 auto 8px;
 }
 
-
-/* =========================================================
-   GIFTS
-========================================================= */
-
-#gifts-section{
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(242,216,221,.88),
-            rgba(238,207,215,.88),
-            rgba(247,231,235,.88)
-        );
-}
-
-.gift-title{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:2.5rem;
-
-    color:#6c2432;
-
-    margin-bottom:10px;
-}
-
-.gift-text{
+.category-desc{
 
     font-size:.88rem;
 
     color:#7d424e;
 
-    line-height:1.65;
+    line-height:1.5;
 
-    margin-bottom:16px;
+    padding:
+        0 15px;
 }
 
 
 /* =========================================================
-   LAST FRAME
+   GIFTS ICON
+========================================================= */
+
+.icon-container{
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border:
+        1px solid #6c2432;
+
+    border-radius:50%;
+
+    width:42px;
+    height:42px;
+}
+
+.icon-container svg{
+
+    width:20px;
+    height:20px;
+
+    stroke:#6c2432;
+
+    fill:none;
+}
+
+.gifts-text{
+
+    font-style:italic;
+
+    font-size:.9rem;
+
+    color:#7d424e;
+
+    line-height:1.6;
+
+    padding:
+        0 10px;
+}
+   .arabic-blessing{
+
+    font-family:'Amiri',serif;
+
+    font-size:1.15rem;
+
+    direction:rtl;
+
+    line-height:1.8;
+
+    margin-top:12px;
+}
+
+
+/* =========================================================
+   LAST
 ========================================================= */
 
 #last-section{
@@ -1500,72 +1472,69 @@ body.locked{
 
 
 /* =========================================================
-   CONFETTI
+   MOBILE
 ========================================================= */
 
-#confetti-box{
+@media(max-width:480px){
 
-    position:fixed;
+    #opening-screen,
+    #opening-poster,
+    #opening-video{
 
-    inset:0;
+        width:100vw;
 
-    z-index:9990;
+        height:100dvh;
 
-    pointer-events:none;
-
-    overflow:hidden;
-
-    display:none;
-}
-
-.confetti{
-
-    position:absolute;
-
-    top:-20px;
-
-    animation:
-        confettiFall linear forwards;
-}
-
-@keyframes confettiFall{
-
-    from{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:1;
+        min-height:100svh;
     }
 
-    to{
+    .invitation-section{
 
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:.15;
+        padding:
+            20px 14px;
     }
+
+    .script-title{
+
+        font-size:2.25rem;
+    }
+
+    .honoured-text{
+
+        font-size:24px;
+    }
+
+    .countdown-box{
+
+        width:62px;
+    }
+
+    .heart-wrapper{
+
+        width:min(350px,90vw);
+
+        height:min(350px,90vw);
+    }
+
+    #music-button{
+
+        right:14px;
+
+        bottom:14px;
+
+        width:40px;
+
+        height:40px;
+    }
+
 }
-
-
-/* =========================================================
-   ROYAL SHINE
-========================================================= */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     z-index:999;
-
     opacity:.55;
 
     background-image:
@@ -1609,70 +1578,6 @@ body::before{
     }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:480px){
-
-    #opening-screen,
-    #opening-poster,
-    #opening-video{
-
-        width:100vw;
-
-        height:100dvh;
-
-        min-height:100svh;
-    }
-
-    .invitation-section{
-
-        padding:
-            22px 14px;
-    }
-
-    .script-title{
-
-        font-size:2.25rem;
-    }
-
-    .honoured-text{
-
-        font-size:24px;
-    }
-
-    .slider-container{
-
-        height:210px;
-    }
-
-    .countdown-box{
-
-        width:62px;
-    }
-
-    .heart-wrapper{
-
-        width:min(350px,90vw);
-
-        height:min(350px,90vw);
-    }
-
-    #music-button{
-
-        right:14px;
-
-        bottom:14px;
-
-        width:40px;
-
-        height:40px;
-    }
-
-}
-
 </style>
 
 </head>
@@ -1702,12 +1607,10 @@ body::before{
         disablepictureinpicture
         controlslist="nodownload noplaybackrate"
     >
-
         <source
             src="./open.mp4"
             type="video/mp4"
         >
-
     </video>
 
     <div id="opening-tap"></div>
@@ -1757,27 +1660,42 @@ body::before{
 
 
 <!-- =======================================================
+     MILAD VIDEO
+======================================================= -->
+
+<section id="milad-section" style="position:relative;width:100%;overflow:hidden;background:transparent;">
+
+    <video
+        id="milad-video"
+        muted
+        playsinline
+        webkit-playsinline
+        autoplay
+        loop
+        preload="auto"
+        style="position:relative;z-index:1;display:block;width:100%;height:auto;max-height:100vh;object-fit:cover;"
+    >
+
+        <source
+            src="./milad .mp4"
+            type="video/mp4"
+        >
+
+    </video>
+
+</section>
+
+
+<!-- =======================================================
      MUSIC
 ======================================================= -->
 
-<audio
-    id="bgMusic"
-    loop
-    preload="auto"
->
-
-    <source
-        src="./alikesath.mp3"
-        type="audio/mpeg"
-    >
-
-</audio>
-
 <button
     id="music-button"
+    type="button"
     aria-label="Music"
 >
-    ♫
+    ♪
 </button>
 
 
@@ -1799,26 +1717,39 @@ body::before{
 
         <div class="honoured-divider">
 
-            <span></span>
-
-            <div class="honoured-heart">
-                ♡
-            </div>
-
-            <span></span>
+            <span class="honoured-heart">
+                ♥
+            </span>
 
         </div>
 
 
         <div class="honoured-text">
 
-            With the blessings<br>
-            of our beloved families,<br>
-            we invite you to celebrate<br>
-            this beautiful beginning with us.
+            We are honored to welcome you to the
+
+            <br>
+
+            Wedding ceremony of Zainab &amp; Mizan
+
+            <br>
+
+            As they begin their journey together in faith
+
+            <br>
+
+            and love,
+
+            <br><br>
+
+            we thank you for being part of this
+
+            <br>
+
+            blessed occasion
 
             <span class="red-heart">
-                ♥
+                ❤️
             </span>
 
         </div>
@@ -1826,53 +1757,13 @@ body::before{
 
         <div class="honoured-divider">
 
-            <span></span>
-
-            <div class="honoured-heart">
-                ♡
-            </div>
-
-            <span></span>
+            <span class="honoured-heart">
+                ♥
+            </span>
 
         </div>
 
     </div>
-
-</section>
-
-
-<!-- =======================================================
-     MILAD
-======================================================= -->
-
-<section
-    class="invitation-section"
-    id="milad-section"
->
-
-    <video
-        id="milad-video"
-        muted
-        autoplay
-        loop
-        playsinline
-        webkit-playsinline
-        preload="auto"
-        style="
-            width:100%;
-            display:block;
-            object-fit:cover;
-            position:relative;
-            z-index:1;
-        "
-    >
-
-        <source
-            src="./milad .mp4"
-            type="video/mp4"
-        >
-
-    </video>
 
 </section>
 
@@ -1903,21 +1794,23 @@ body::before{
 
         <div class="arabic-text">
 
-            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
-            مِّنْ أَنفُسِكُمْ أَزْوَاجًا
-            لِّتَسْكُنُوا إِلَيْهَا
-            وَجَعَلَ بَيْنَكُم
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ
+            أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
             مَّوَدَّةً وَرَحْمَةً
 
         </div>
 
         <div class="verse-translation">
 
-            “And among His signs is that He created
-            for you spouses from among yourselves
-            so that you may find tranquility in them;
-            and He placed between you affection
-            and mercy.”
+            "And of His signs is that He created for you from yourselves
+            mates that you may find tranquility in them, and He placed
+            between you affection and mercy."
+
+            <br>
+
+            <span style="font-size:.8rem;">
+                [Surah Ar-Rum: 21]
+            </span>
 
         </div>
 
@@ -1942,10 +1835,8 @@ body::before{
 
     <div class="section-inner">
 
-        <div
-            class="scratch-title"
-        >
-            You're Invited!
+        <div class="scratch-title">
+            Our Special Day
         </div>
 
 
@@ -1977,12 +1868,12 @@ body::before{
 
             <canvas
                 id="scratch-canvas"
+                width="360"
+                height="360"
             ></canvas>
 
 
-            <div
-                class="scratch-sparkles"
-            >
+            <div class="scratch-sparkles">
 
                 <span class="spark"></span>
                 <span class="spark"></span>
@@ -2002,6 +1893,7 @@ body::before{
             <button
                 class="save-button"
                 id="saveDateButton"
+                type="button"
             >
                 SAVE THE DATE
             </button>
@@ -2013,89 +1905,13 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     PICTURES
-======================================================= -->
+<!-- CONFETTI -->
 
-<section
-    class="invitation-section"
-    id="pictures-section"
->
-
-    <div
-        class="global-petals"
-        id="pictures-section-petals"
-    ></div>
-
-    <div class="section-inner">
-
-        <div class="script-title">
-            Our Special Moments
-        </div>
-
-
-        <div class="slider-container">
-
-            <div
-                class="slides"
-                id="slider"
-            >
-
-                <div class="slide">
-
-                    <img
-                        src="https://files.catbox.moe/7dfatq.jpeg"
-                        alt=""
-                    >
-
-                </div>
-
-                <div class="slide">
-
-                    <img
-                        src="https://files.catbox.moe/l3h8mt.jpeg"
-                        alt=""
-                    >
-
-                </div>
-
-                <div class="slide">
-
-                    <img
-                        src="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.JPG"
-                        alt=""
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="slider-dots">
-
-            <span
-                class="dot active"
-            ></span>
-
-            <span
-                class="dot"
-            ></span>
-
-            <span
-                class="dot"
-            ></span>
-
-        </div>
-
-    </div>
-
-</section>
+<div id="confetti-box"></div>
 
 
 <!-- =======================================================
-     COUNTDOWN
+     COUNTDOWN + TIMELINE
 ======================================================= -->
 
 <section
@@ -2111,18 +1927,15 @@ body::before{
     <div class="section-inner">
 
         <div class="script-title">
-            The Countdown
+            Counting Down to Forever
         </div>
-
 
         <div class="divider">
             ♥
         </div>
 
 
-        <div
-            class="countdown-container"
-        >
+        <div class="countdown-container">
 
             <div class="countdown-box">
 
@@ -2193,7 +2006,18 @@ body::before{
         <div class="timeline-header">
 
             <div class="clock-icon">
-                ♡
+                🕒
+            </div>
+
+            <div
+                class="script-title"
+                style="font-size:1.85rem;margin:0;"
+            >
+                Programs Schedule
+            </div>
+
+            <div class="divider">
+                ♥
             </div>
 
         </div>
@@ -2201,21 +2025,22 @@ body::before{
 
         <div class="timeline">
 
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
-                <div class="event-title">
-                    Guest Arrival
-                </div>
+                <h3 class="event-title">
+                    Aameen
+                </h3>
 
                 <div class="event-time">
-                    7:00 PM
+                    Nov 27, 2026 : venue - Sarovar Portico
                 </div>
 
-                <div class="event-desc">
-                    Welcome and gathering
-                </div>
+                <p class="event-desc">
+                    We Warmly welcome you.. !
+                </p>
 
             </div>
 
@@ -2224,57 +2049,20 @@ body::before{
 
                 <div class="timeline-dot"></div>
 
-                <div class="event-title">
-                    Bride Entry
-                </div>
+                <h3 class="event-title">
+                    Nikkah
+                </h3>
 
                 <div class="event-time">
-                    8:00 PM
+                    Nov 29, 2026 : Venue - YMCA Club
                 </div>
 
-                <div class="event-desc">
-                    A beautiful entrance
-                </div>
+                <p class="event-desc">
+                    Your gracious presence is requested ❤️
+                </p>
 
             </div>
 
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="event-title">
-                    Nikkah Ceremony
-                </div>
-
-                <div class="event-time">
-                    8:30 PM
-                </div>
-
-                <div class="event-desc">
-                    The beginning of forever
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="event-title">
-                    Buffet Opening
-                </div>
-
-                <div class="event-time">
-                    9:30 PM
-                </div>
-
-                <div class="event-desc">
-                    Dinner and celebration
-                </div>
-
-            </div>
 
         </div>
 
@@ -2299,8 +2087,12 @@ body::before{
 
     <div class="section-inner">
 
-        <div class="venue-title">
-            The Venue
+        <div class="venue-icon">
+            📍
+        </div>
+
+        <div class="script-title">
+            Venue
         </div>
 
         <div class="divider">
@@ -2312,17 +2104,133 @@ body::before{
         </div>
 
         <div class="venue-address">
-            Sarkhej - Gandhinagar Hwy,<br>
-            Makarba, Ahmedabad,<br>
-            Gujarat 380015, India
+
+            Sarkhej - Gandhinagar Hwy,
+            Makarba, Ahmedabad, Gujarat 380015,
+            India
+
         </div>
 
+
+        <div class="venue-illustration">
+
+            <svg
+                viewBox="0 0 300 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <path
+                    d="M10 110H290"
+                    stroke="#6c2432"
+                    stroke-width="1.5"
+                />
+
+                <path
+                    d="M20 105H280"
+                    stroke="#6c2432"
+                    stroke-width="1"
+                />
+
+                <path
+                    d="M130 110V70C130 55 170 55 170 70V110"
+                    stroke="#6c2432"
+                    stroke-width="1.2"
+                />
+
+                <path
+                    d="M140 110V85C140 75 160 75 160 85V110"
+                    stroke="#6c2432"
+                    stroke-width="1"
+                />
+
+                <path
+                    d="M142 55C142 40 158 40 158 55"
+                    stroke="#6c2432"
+                    stroke-width="1.2"
+                />
+
+                <circle
+                    cx="150"
+                    cy="37"
+                    r="2"
+                    fill="#6c2432"
+                />
+
+                <path
+                    d="M50 110V50L60 40L70 50V110"
+                    stroke="#6c2432"
+                    stroke-width="1.2"
+                />
+
+                <circle
+                    cx="60"
+                    cy="37"
+                    r="1.5"
+                    fill="#6c2432"
+                />
+
+                <path
+                    d="M230 110V50L240 40L250 50V110"
+                    stroke="#6c2432"
+                    stroke-width="1.2"
+                />
+
+                <circle
+                    cx="240"
+                    cy="37"
+                    r="1.5"
+                    fill="#6c2432"
+                />
+
+                <path
+                    d="M70 110V75C70 65 130 65 130 75V110"
+                    stroke="#6c2432"
+                    stroke-width="1"
+                />
+
+                <path
+                    d="M170 110V75C170 65 230 65 230 75V110"
+                    stroke="#6c2432"
+                    stroke-width="1"
+                />
+
+                <path
+                    d="M90 110V90C90 85 100 85 100 90V110"
+                    stroke="#6c2432"
+                    stroke-width=".8"
+                />
+
+                <path
+                    d="M110 110V90C110 85 120 85 120 90V110"
+                    stroke="#6c2432"
+                    stroke-width=".8"
+                />
+
+                <path
+                    d="M180 110V90C180 85 190 85 190 90V110"
+                    stroke="#6c2432"
+                    stroke-width=".8"
+                />
+
+                <path
+                    d="M200 110V90C200 85 210 85 210 90V110"
+                    stroke="#6c2432"
+                    stroke-width=".8"
+                />
+
+            </svg>
+
+        </div>
+
+
         <a
-            href="https://www.google.com/maps/search/?api=1&query=YMCA+Club+Sarkhej+Gandhinagar+Hwy+Makarba+Ahmedabad"
+            href="https://www.google.com/maps/search/?api=1&query=YMCA+Club%2C+Sarkhej+-+Gandhinagar+Hwy%2C+Makarba%2C+Ahmedabad%2C+Gujarat+380015%2C+India"
             target="_blank"
+            rel="noopener"
             class="map-btn"
         >
-            VIEW ON GOOGLE MAPS
+            View on Google Maps
         </a>
 
     </div>
@@ -2346,7 +2254,8 @@ body::before{
 
     <div class="section-inner">
 
-        <div class="dress-title">
+
+        <div class="script-title">
             Dress Code
         </div>
 
@@ -2354,43 +2263,40 @@ body::before{
             ♥
         </div>
 
-        <div class="dress-description">
 
-            We would love for our guests to dress
-            in warm earthy tones, beige, brown
-            or neutral shades to complement
-            our wedding theme.
+        <div class="cute-message">
 
+            "We can't wait to celebrate our special day
+            with you in style! Here is a little guide
+            for our favorite people."
+
+        </div>
+
+
+        <div class="category-title">
+            Women
+        </div>
+
+        <div class="category-line"></div>
+
+        <div class="category-desc">
+            Elegant formal attire in pastel or jewel tones
         </div>
 
 
-        <div class="palette-container">
-
-            <div
-                class="color-circle"
-                style="background-color:#4F382B;"
-                title="Dark Brown"
-            ></div>
-
-            <div
-                class="color-circle"
-                style="background-color:#8C5F43;"
-                title="Medium Brown"
-            ></div>
-
-            <div
-                class="color-circle"
-                style="background-color:#C8B7A3;"
-                title="Light Beige / Taupe"
-            ></div>
-
-            <div
-                class="color-circle"
-                style="background-color:#A27B5A;"
-                title="Caramel Tan"
-            ></div>
-
+        <div
+            class="category-title"
+            style="margin-top:22px;"
+        >
+            Men
         </div>
+
+        <div class="category-line"></div>
+
+        <div class="category-desc">
+            Suit or traditional formal wear
+        </div>
+
 
     </div>
 
@@ -2413,7 +2319,31 @@ body::before{
 
     <div class="section-inner">
 
-        <div class="gift-title">
+        <div class="icon-container">
+
+            <svg
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+
+                <path
+                    d="
+                        M20 12v10H4V12
+                        M2 7h20v5H2V7z
+                        M12 22V7
+                        M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z
+                        M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z
+                    "
+                ></path>
+
+            </svg>
+
+        </div>
+
+
+        <div class="script-title">
             Gifts
         </div>
 
@@ -2421,11 +2351,22 @@ body::before{
             ♥
         </div>
 
-        <div class="gift-text">
 
-            For all those who wish to bless us
-            with a gift, your presence and love
-            are already the greatest gift of all.
+        <div class="gifts-text">
+
+            "No gift is better than your blessings.
+            Your heartfelt duas and loving presence
+            are all we cherish as we begin this new
+            journey under the blessed shade and
+            teachings of the Ahlulbayt."
+
+        </div>
+
+
+        <div class="arabic-blessing">
+
+            بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا
+            وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
 
         </div>
 
@@ -2450,7 +2391,6 @@ body::before{
 
     <div class="section-inner">
 
-
         <svg
             class="wavy-line"
             viewBox="0 0 300 20"
@@ -2465,53 +2405,20 @@ body::before{
                 stroke-linecap="round"
             />
 
-            <circle
-                cx="150"
-                cy="10"
-                r="2"
-                fill="#b87a86"
-            />
-
-            <circle
-                cx="75"
-                cy="13"
-                r="1.5"
-                fill="#b87a86"
-            />
-
-            <circle
-                cx="225"
-                cy="7"
-                r="1.5"
-                fill="#b87a86"
-            />
+            <circle cx="150" cy="10" r="2" fill="#b87a86" />
+            <circle cx="75" cy="13" r="1.5" fill="#b87a86" />
+            <circle cx="225" cy="7" r="1.5" fill="#b87a86" />
 
         </svg>
 
-
         <div class="celebrate-text">
-
             We can't wait to celebrate<br>
-
-            <span
-                style="
-                    font-size:2.4rem;
-                    margin-top:5px;
-                    display:inline-block;
-                "
-            >
-                with you!
-            </span>
-
+            <span style="font-size:2.4rem;margin-top:5px;display:inline-block;">with you!</span>
         </div>
-
 
         <div class="names-text">
-
             Hussain ali rajjabali kanani &amp; kanani family
-
         </div>
-
 
         <svg
             class="wavy-line"
@@ -2528,39 +2435,15 @@ body::before{
                 stroke-linecap="round"
             />
 
-            <circle
-                cx="150"
-                cy="10"
-                r="2"
-                fill="#b87a86"
-            />
-
-            <circle
-                cx="75"
-                cy="7"
-                r="1.5"
-                fill="#b87a86"
-            />
-
-            <circle
-                cx="225"
-                cy="13"
-                r="1.5"
-                fill="#b87a86"
-            />
+            <circle cx="150" cy="10" r="2" fill="#b87a86" />
+            <circle cx="75" cy="7" r="1.5" fill="#b87a86" />
+            <circle cx="225" cy="13" r="1.5" fill="#b87a86" />
 
         </svg>
 
     </div>
 
 </section>
-
-
-<!-- =======================================================
-     CONFETTI BOX
-======================================================= -->
-
-<div id="confetti-box"></div>
 
 
 <script>
@@ -2570,114 +2453,134 @@ body::before{
 ========================================================= */
 
 const openingScreen =
-    document.getElementById(
-        "opening-screen"
-    );
+    document.getElementById("opening-screen");
 
 const openingPoster =
-    document.getElementById(
-        "opening-poster"
-    );
+    document.getElementById("opening-poster");
 
 const openingVideo =
-    document.getElementById(
-        "opening-video"
-    );
+    document.getElementById("opening-video");
 
 const openingTap =
-    document.getElementById(
-        "opening-tap"
-    );
+    document.getElementById("opening-tap");
 
 const curtainVideo =
-    document.getElementById(
-        "curtain-video"
-    );
+    document.getElementById("curtain-video");
 
-const music =
-    document.getElementById(
-        "bgMusic"
-    );
-
-const musicButton =
-    document.getElementById(
-        "music-button"
-    );
+const scrollHint =
+    document.getElementById("scrollHint");
 
 
 /* =========================================================
    MUSIC
 ========================================================= */
 
-let musicStarted = false;
+const music =
+    new Audio("./alikesath.mp3");
 
-function startMusic(){
+music.loop = true;
+music.preload = "auto";
 
-    if(musicStarted){
-        return;
-    }
+const musicButton =
+    document.getElementById("music-button");
 
-    musicStarted = true;
+let musicPlaying = false;
 
-    music.volume = .65;
 
-    music.play().catch(
-        function(){}
-    );
+function updateMusicIcon(){
 
+    musicButton.innerHTML =
+        musicPlaying ? "♫" : "♪";
 }
+
 
 musicButton.addEventListener(
     "click",
-    function(){
+    async function(){
 
-        if(
-            music.paused
-        ){
-
-            music.play().catch(
-                function(){}
-            );
-
-        }else{
+        if(musicPlaying){
 
             music.pause();
 
+            musicPlaying = false;
+
+        }else{
+
+            try{
+
+                await music.play();
+
+                musicPlaying = true;
+
+            }catch(error){
+
+                console.log(
+                    "Music playback blocked:",
+                    error
+                );
+
+            }
+
         }
+
+        updateMusicIcon();
 
     }
 );
 
 
 /* =========================================================
-   OPENING VIDEO
+   PRELOAD CURTAIN
+========================================================= */
+
+curtainVideo.pause();
+
+try{
+
+    curtainVideo.currentTime = 0;
+
+}catch(error){}
+
+
+/* =========================================================
+   OPENING TAP
 ========================================================= */
 
 openingTap.addEventListener(
     "click",
-    function(){
+    async function(){
 
-        startMusic();
+        openingTap.style.pointerEvents =
+            "none";
+
 
         openingPoster.style.opacity =
             "0";
 
-        openingVideo.style.display =
-            "block";
 
-        openingVideo.currentTime =
-            0;
+        try{
 
-        const playPromise =
-            openingVideo.play();
+            music.currentTime = 0;
 
-        if(playPromise){
+            await music.play();
 
-            playPromise.catch(
-                function(){}
+            musicPlaying = true;
+
+            updateMusicIcon();
+
+        }catch(error){
+
+            console.log(
+                "Music playback waiting:",
+                error
             );
 
         }
+
+
+        openingVideo.style.display =
+            "block";
+
 
         requestAnimationFrame(
             function(){
@@ -2688,6 +2591,116 @@ openingTap.addEventListener(
             }
         );
 
+
+        try{
+
+            await openingVideo.play();
+
+        }catch(error){
+
+            console.log(
+                "Opening video issue:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   OPENING → CURTAIN
+========================================================= */
+
+let curtainStarted = false;
+
+
+function startCurtainTransition(){
+
+    if(curtainStarted){
+        return;
+    }
+
+    curtainStarted = true;
+
+
+    try{
+
+        curtainVideo.currentTime = 0;
+
+    }catch(error){}
+
+
+    curtainVideo.play().catch(
+        function(error){
+
+            console.log(
+                "Curtain playback issue:",
+                error
+            );
+
+        }
+    );
+
+
+    setTimeout(
+        function(){
+
+            openingScreen.style.opacity =
+                "0";
+
+            document.body.classList.remove(
+                "locked"
+            );
+
+        },
+        80
+    );
+
+
+    setTimeout(
+        function(){
+
+            openingScreen.style.display =
+                "none";
+
+        },
+        1300
+    );
+
+}
+
+
+/* =========================================================
+   OPENING VIDEO DETECTION
+========================================================= */
+
+openingVideo.addEventListener(
+    "timeupdate",
+    function(){
+
+        if(
+            openingVideo.duration &&
+            isFinite(openingVideo.duration)
+        ){
+
+            const remaining =
+                openingVideo.duration -
+                openingVideo.currentTime;
+
+
+            if(
+                remaining <= .35 &&
+                !curtainStarted
+            ){
+
+                startCurtainTransition();
+
+            }
+
+        }
+
     }
 );
 
@@ -2696,70 +2709,89 @@ openingVideo.addEventListener(
     "ended",
     function(){
 
-        openingScreen.style.opacity =
-            "0";
+        if(!curtainStarted){
 
-        setTimeout(
-            function(){
+            startCurtainTransition();
 
-                openingScreen.style.display =
-                    "none";
-
-                document.body.classList.remove(
-                    "locked"
-                );
-
-                curtainVideo.play().catch(
-                    function(){}
-                );
-
-            },
-            1200
-        );
+        }
 
     }
 );
 
 
 /* =========================================================
-   CURTAIN VIDEO
-   FREEZE 0.03 SECOND BEFORE END
+   CURTAIN
+   FREEZE EXACTLY 0.03 SECONDS BEFORE END
 ========================================================= */
 
-let curtainFrozen =
-    false;
+let curtainFrozen = false;
+
 
 curtainVideo.addEventListener(
     "timeupdate",
     function(){
 
+        if(curtainFrozen){
+            return;
+        }
+
+
         if(
-            !curtainVideo.duration ||
-            curtainFrozen
+            curtainVideo.duration &&
+            isFinite(curtainVideo.duration)
         ){
 
-            return;
+            const freezeAt =
+                curtainVideo.duration - 0.03;
+
+
+            if(
+                curtainVideo.currentTime >=
+                freezeAt
+            ){
+
+                curtainFrozen = true;
+
+
+                try{
+
+                    curtainVideo.currentTime =
+                        freezeAt;
+
+                }catch(error){}
+
+
+                curtainVideo.pause();
+
+
+                document.body.classList.remove(
+                    "locked"
+                );
+
+
+                scrollHint.classList.add(
+                    "show"
+                );
+
+            }
 
         }
 
-        const freezeAt =
-            curtainVideo.duration - 0.03;
+    }
+);
 
-        if(
-            curtainVideo.currentTime >=
-            freezeAt
-        ){
 
-            curtainFrozen = true;
+curtainVideo.addEventListener(
+    "ended",
+    function(){
+
+        if(!curtainFrozen){
 
             curtainVideo.pause();
 
-            curtainVideo.currentTime =
-                freezeAt;
+            curtainFrozen = true;
 
-            document.getElementById(
-                "scrollHint"
-            ).classList.add(
+            scrollHint.classList.add(
                 "show"
             );
 
@@ -2770,7 +2802,7 @@ curtainVideo.addEventListener(
 
 
 /* =========================================================
-   SCRATCH CANVAS
+   SCRATCH
 ========================================================= */
 
 const scratchCanvas =
@@ -2780,226 +2812,167 @@ const scratchCanvas =
 
 const scratchCtx =
     scratchCanvas.getContext(
-        "2d"
+        "2d",
+        {
+            willReadFrequently:true
+        }
     );
 
-let scratchDrawing =
-    false;
 
-let scratchRevealed =
-    false;
+let scratchDrawing = false;
+
+let scratchRevealed = false;
 
 let lastX = null;
+
 let lastY = null;
 
+let lastProgressCheck = 0;
 
-function resizeScratchCanvas(){
 
-    const rect =
-        scratchCanvas.getBoundingClientRect();
+/* =========================================================
+   SCRATCH SURFACE
+========================================================= */
 
-    const dpr =
-        window.devicePixelRatio ||
-        1;
-
-    scratchCanvas.width =
-        rect.width * dpr;
-
-    scratchCanvas.height =
-        rect.height * dpr;
-
-    scratchCtx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
+const scratchGradient =
+    scratchCtx.createRadialGradient(
+        110,
+        80,
+        20,
+        180,
+        180,
+        250
     );
 
-    paintScratchCover();
+scratchGradient.addColorStop(
+    0,
+    "#d58b98"
+);
 
-}
+scratchGradient.addColorStop(
+    .35,
+    "#a94f63"
+);
 
+scratchGradient.addColorStop(
+    .72,
+    "#7d3044"
+);
 
-function paintScratchCover(){
+scratchGradient.addColorStop(
+    1,
+    "#541b2b"
+);
 
-    const rect =
-        scratchCanvas.getBoundingClientRect();
+scratchCtx.fillStyle =
+    scratchGradient;
 
-    const width =
-        rect.width;
-
-    const height =
-        rect.height;
-
-
-    const gradient =
-        scratchCtx.createLinearGradient(
-            0,
-            0,
-            width,
-            height
-        );
-
-
-    gradient.addColorStop(
-        0,
-        "#3f1621"
-    );
-
-    gradient.addColorStop(
-        .35,
-        "#6b2432"
-    );
-
-    gradient.addColorStop(
-        .65,
-        "#873b4b"
-    );
-
-    gradient.addColorStop(
-        1,
-        "#4c1926"
-    );
+scratchCtx.fillRect(
+    0,
+    0,
+    scratchCanvas.width,
+    scratchCanvas.height
+);
 
 
-    scratchCtx.fillStyle =
-        gradient;
+/* =========================================================
+   SHINY PARTICLES
+========================================================= */
 
-    scratchCtx.fillRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-
-    for(
-        let i = 0;
-        i < 90;
-        i++
-    ){
-
-        const x =
-            Math.random() *
-            width;
-
-        const y =
-            Math.random() *
-            height;
-
-        const radius =
-            Math.random() * 1.5 + .4;
-
-        scratchCtx.beginPath();
-
-        scratchCtx.arc(
-            x,
-            y,
-            radius,
-            0,
-            Math.PI * 2
-        );
-
-        scratchCtx.fillStyle =
-            "rgba(255,240,245," +
-            (
-                Math.random() * .35 +
-                .15
-            ) +
-            ")";
-
-        scratchCtx.fill();
-
-    }
-
-
-    scratchCtx.fillStyle =
-        "rgba(255,248,250,.9)";
-
-    scratchCtx.textAlign =
-        "center";
-
-    scratchCtx.font =
-        "600 13px Playfair Display";
-
-    scratchCtx.fillText(
-        "SCRATCH TO REVEAL",
-        width / 2,
-        height / 2 - 5
-    );
-
-    scratchCtx.font =
-        "11px Playfair Display";
-
-    scratchCtx.fillText(
-        "your special day",
-        width / 2,
-        height / 2 + 17
-    );
-
-}
-
-
-function getScratchPosition(
-    event
+for(
+    let i = 0;
+    i < 700;
+    i++
 ){
 
+    const x =
+        Math.random() *
+        scratchCanvas.width;
+
+    const y =
+        Math.random() *
+        scratchCanvas.height;
+
+    const radius =
+        Math.random() * 1.1;
+
+    scratchCtx.globalAlpha =
+        Math.random() * .45 + .15;
+
+    scratchCtx.fillStyle =
+        Math.random() > .25
+        ? "#ffffff"
+        : "#f2c4cc";
+
+    scratchCtx.beginPath();
+
+    scratchCtx.arc(
+        x,
+        y,
+        radius,
+        0,
+        Math.PI * 2
+    );
+
+    scratchCtx.fill();
+}
+
+scratchCtx.globalAlpha = 1;
+
+
+/* =========================================================
+   SCRATCH POSITION
+========================================================= */
+
+function getScratchPosition(event){
+
     const rect =
         scratchCanvas.getBoundingClientRect();
 
-    return {
+    return{
 
         x:
-            event.clientX -
-            rect.left,
+            (event.clientX - rect.left) *
+            (
+                scratchCanvas.width /
+                rect.width
+            ),
 
         y:
-            event.clientY -
-            rect.top
+            (event.clientY - rect.top) *
+            (
+                scratchCanvas.height /
+                rect.height
+            )
 
     };
 
 }
 
 
-let scratchedPixels =
-    0;
-
+/* =========================================================
+   FAST SCRATCH
+========================================================= */
 
 function scratch(event){
 
     if(
+        !scratchDrawing ||
         scratchRevealed
     ){
-
         return;
-
     }
 
 
-    const pos =
-        getScratchPosition(
-            event
-        );
+    const position =
+        getScratchPosition(event);
 
 
     scratchCtx.globalCompositeOperation =
         "destination-out";
 
 
-    scratchCtx.lineCap =
-        "round";
-
-    scratchCtx.lineJoin =
-        "round";
-
-    scratchCtx.lineWidth =
-        35;
-
-
-    scratchCtx.beginPath();
+    const brushRadius = 22;
 
 
     if(
@@ -3007,56 +2980,86 @@ function scratch(event){
         lastY !== null
     ){
 
-        scratchCtx.moveTo(
-            lastX,
-            lastY
-        );
+        const dx =
+            position.x - lastX;
+
+        const dy =
+            position.y - lastY;
+
+        const distance =
+            Math.sqrt(
+                dx * dx +
+                dy * dy
+            );
+
+        const steps =
+            Math.max(
+                1,
+                Math.ceil(
+                    distance / 5
+                )
+            );
+
+
+        for(
+            let i = 1;
+            i <= steps;
+            i++
+        ){
+
+            const x =
+                lastX +
+                dx * (i / steps);
+
+            const y =
+                lastY +
+                dy * (i / steps);
+
+
+            scratchCtx.beginPath();
+
+            scratchCtx.arc(
+                x,
+                y,
+                brushRadius,
+                0,
+                Math.PI * 2
+            );
+
+            scratchCtx.fill();
+
+        }
 
     }else{
 
-        scratchCtx.moveTo(
-            pos.x,
-            pos.y
+        scratchCtx.beginPath();
+
+        scratchCtx.arc(
+            position.x,
+            position.y,
+            brushRadius,
+            0,
+            Math.PI * 2
         );
+
+        scratchCtx.fill();
 
     }
 
 
-    scratchCtx.lineTo(
-        pos.x,
-        pos.y
-    );
+    lastX = position.x;
+
+    lastY = position.y;
 
 
-    scratchCtx.stroke();
-
-
-    scratchCtx.beginPath();
-
-    scratchCtx.arc(
-        pos.x,
-        pos.y,
-        17,
-        0,
-        Math.PI * 2
-    );
-
-    scratchCtx.fill();
-
-
-    lastX =
-        pos.x;
-
-    lastY =
-        pos.y;
-
-
-    scratchedPixels++;
-
+    const now =
+        performance.now();
 
     if(
-        scratchedPixels % 8 === 0
+        now - lastProgressCheck > 120
     ){
+
+        lastProgressCheck = now;
 
         checkScratchProgress();
 
@@ -3065,58 +3068,45 @@ function scratch(event){
 }
 
 
+/* =========================================================
+   SCRATCH PROGRESS
+========================================================= */
+
 function checkScratchProgress(){
 
-    const rect =
-        scratchCanvas.getBoundingClientRect();
+    if(scratchRevealed){
+        return;
+    }
 
-    const sampleCanvas =
-        document.createElement(
-            "canvas"
-        );
 
-    sampleCanvas.width =
-        70;
-
-    sampleCanvas.height =
-        70;
-
-    const sampleCtx =
-        sampleCanvas.getContext(
-            "2d"
+    const imageData =
+        scratchCtx.getImageData(
+            0,
+            0,
+            scratchCanvas.width,
+            scratchCanvas.height
         );
 
 
-    sampleCtx.drawImage(
-        scratchCanvas,
-        0,
-        0,
-        sampleCanvas.width,
-        sampleCanvas.height
-    );
+    const pixels =
+        imageData.data;
 
 
-    const data =
-        sampleCtx.getImageData(
-            0,
-            0,
-            sampleCanvas.width,
-            sampleCanvas.height
-        ).data;
+    let transparent = 0;
 
-
-    let transparent =
-        0;
+    let checked = 0;
 
 
     for(
         let i = 3;
-        i < data.length;
-        i += 4
+        i < pixels.length;
+        i += 40
     ){
 
+        checked++;
+
         if(
-            data[i] < 60
+            pixels[i] < 80
         ){
 
             transparent++;
@@ -3126,15 +3116,12 @@ function checkScratchProgress(){
     }
 
 
-    const percent =
-        transparent /
-        (
-            data.length / 4
-        );
+    const percentage =
+        (transparent / checked) * 100;
 
 
     if(
-        percent >= .43
+        percentage >= 43
     ){
 
         revealScratch();
@@ -3144,19 +3131,17 @@ function checkScratchProgress(){
 }
 
 
+/* =========================================================
+   REVEAL SCRATCH
+========================================================= */
+
 function revealScratch(){
 
-    if(
-        scratchRevealed
-    ){
-
+    if(scratchRevealed){
         return;
-
     }
 
-
-    scratchRevealed =
-        true;
+    scratchRevealed = true;
 
 
     scratchCtx.clearRect(
@@ -3216,14 +3201,10 @@ scratchCanvas.addEventListener(
             event.pointerId
         );
 
-        scratchDrawing =
-            true;
+        scratchDrawing = true;
 
-        lastX =
-            null;
-
-        lastY =
-            null;
+        lastX = null;
+        lastY = null;
 
         scratch(event);
 
@@ -3235,12 +3216,8 @@ scratchCanvas.addEventListener(
     "pointermove",
     function(event){
 
-        if(
-            !scratchDrawing
-        ){
-
+        if(!scratchDrawing){
             return;
-
         }
 
         event.preventDefault();
@@ -3255,14 +3232,10 @@ scratchCanvas.addEventListener(
     "pointerup",
     function(event){
 
-        scratchDrawing =
-            false;
+        scratchDrawing = false;
 
-        lastX =
-            null;
-
-        lastY =
-            null;
+        lastX = null;
+        lastY = null;
 
         try{
 
@@ -3280,25 +3253,13 @@ scratchCanvas.addEventListener(
     "pointercancel",
     function(){
 
-        scratchDrawing =
-            false;
+        scratchDrawing = false;
 
-        lastX =
-            null;
-
-        lastY =
-            null;
+        lastX = null;
+        lastY = null;
 
     }
 );
-
-
-window.addEventListener(
-    "resize",
-    resizeScratchCanvas
-);
-
-resizeScratchCanvas();
 
 
 /* =========================================================
@@ -3313,8 +3274,7 @@ function startConfetti(){
         );
 
 
-    box.innerHTML =
-        "";
+    box.innerHTML = "";
 
     box.style.display =
         "block";
@@ -3366,8 +3326,7 @@ function startConfetti(){
 
 
         piece.style.width =
-            size +
-            "px";
+            size + "px";
 
 
         piece.style.height =
@@ -3377,8 +3336,7 @@ function startConfetti(){
                 ? 1.7
                 : 1
             )
-            +
-            "px";
+            + "px";
 
 
         piece.style.animationDuration =
@@ -3386,8 +3344,7 @@ function startConfetti(){
                 Math.random() * 2.5 +
                 2.5
             )
-            +
-            "s";
+            + "s";
 
 
         piece.style.animationDelay =
@@ -3422,7 +3379,7 @@ function startConfetti(){
 
 
 /* =========================================================
-   SAVE THE DATE
+   SAVE THE DATE — NOVEMBER 29, 2026
 ========================================================= */
 
 const saveDateButton =
@@ -3502,8 +3459,7 @@ END:VCALENDAR`;
             );
 
 
-        link.href =
-            url;
+        link.href = url;
 
         link.download =
             "Mizan-Zainab-Save-the-Date.ics";
@@ -3536,91 +3492,7 @@ END:VCALENDAR`;
 
 
 /* =========================================================
-   PICTURES SLIDER
-========================================================= */
-
-let slideIndex =
-    0;
-
-
-const slider =
-    document.getElementById(
-        "slider"
-    );
-
-
-const dots =
-    document.querySelectorAll(
-        ".dot"
-    );
-
-
-function showSlide(index){
-
-    if(
-        index >= 3
-    ){
-
-        index =
-            0;
-
-    }
-
-    if(
-        index < 0
-    ){
-
-        index =
-            2;
-
-    }
-
-
-    slideIndex =
-        index;
-
-
-    slider.style.transform =
-        "translateX(-" +
-        (
-            index *
-            33.3333333333
-        ) +
-        "%)";
-
-
-    dots.forEach(
-        function(dot){
-
-            dot.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    dots[index].classList.add(
-        "active"
-    );
-
-}
-
-
-setInterval(
-    function(){
-
-        showSlide(
-            slideIndex + 1
-        );
-
-    },
-    3500
-);
-
-
-/* =========================================================
-   COUNTDOWN
+   COUNTDOWN — NOVEMBER 29, 2026
 ========================================================= */
 
 const targetDate =
@@ -3636,36 +3508,28 @@ function updateCountdown(){
 
 
     const distance =
-        targetDate -
-        now;
+        targetDate - now;
 
 
-    if(
-        distance <= 0
-    ){
+    if(distance <= 0){
 
         document.getElementById(
             "days"
-        ).innerText =
-            "00";
+        ).innerText = "00";
 
         document.getElementById(
             "hours"
-        ).innerText =
-            "00";
+        ).innerText = "00";
 
         document.getElementById(
             "minutes"
-        ).innerText =
-            "00";
+        ).innerText = "00";
 
         document.getElementById(
             "seconds"
-        ).innerText =
-            "00";
+        ).innerText = "00";
 
         return;
-
     }
 
 
@@ -3770,27 +3634,18 @@ setInterval(
 
 
 /* =========================================================
-   LIGHT FALLING PETALS
-   NON-VIDEO FRAMES ONLY
+   TINY FALLING PETALS
+   ONLY AYAT + GIFTS
 ========================================================= */
 
-function createPetals(
-    layerId,
-    amount
-){
+function createPetals(layerId, amount){
 
     const layer =
-        document.getElementById(
-            layerId
-        );
-
+        document.getElementById(layerId);
 
     if(!layer){
-
         return;
-
     }
-
 
     for(
         let i = 0;
@@ -3799,56 +3654,30 @@ function createPetals(
     ){
 
         const petal =
-            document.createElement(
-                "span"
-            );
-
+            document.createElement("span");
 
         petal.className =
             "petal";
 
-
         petal.style.left =
-            Math.random() * 100 +
-            "%";
-
+            Math.random() * 100 + "%";
 
         petal.style.animationDuration =
-            (
-                Math.random() * 7 +
-                7
-            )
-            +
-            "s";
-
+            (Math.random() * 7 + 7) + "s";
 
         petal.style.animationDelay =
-            (
-                Math.random() * -12
-            )
-            +
-            "s";
-
+            (Math.random() * -12) + "s";
 
         petal.style.opacity =
-            (
-                Math.random() * .45 +
-                .4
-            );
-
+            (Math.random() * .45 + .4);
 
         petal.style.transform =
             "rotate(" +
             Math.random() * 360 +
             "deg)";
 
-
-        layer.appendChild(
-            petal
-        );
-
+        layer.appendChild(petal);
     }
-
 }
 
 
@@ -3856,25 +3685,20 @@ function createPetals(
     "honoured-section-petals",
     "ayat-section-petals",
     "scratch-section-petals",
-    "pictures-section-petals",
     "countdown-section-petals",
     "venue-section-petals",
     "dress-section-petals",
     "gifts-section-petals",
     "last-petals"
-].forEach(
-    function(layerId){
+].forEach(function(layerId){
 
-        createPetals(
-            layerId,
-            28
-        );
+    createPetals(layerId, 28);
 
-    }
-);
+});
 
 </script>
 
 </body>
 
 </html>
+
