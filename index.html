@@ -47,85 +47,54 @@ body{
     color:#6c2432;
     overflow-x:hidden;
 
-    /*
-       CONTINUOUS ROYAL GRADIENT
-
-       CURTAINS END
-       ↓
-       MAUVE
-       ↓
-       SOFT PINK
-       ↓
-       BLUSH PINK
-       ↓
-       COUNTDOWN
-       ↓
-       SOFT GREEN
-       ↓
-       PASTEL GREEN
-       ↓
-       HALDI CREAM / YELLOW
-       ↓
-       NIKKAH BEIGE / GOLD
-       ↓
-       SOFT PINK
+    /* ONE CONTINUOUS GRADIENT
+       MAUVE at the beginning
+       → soft pink
+       → pastel pink
+       → GREEN starts AFTER COUNTDOWN
+       → pastel yellow
+       → beige/golden
+       → soft pink
     */
 
     background:
         radial-gradient(
             circle at 18% 18%,
-            rgba(255,255,255,.15) 0 1px,
+            rgba(255,255,255,.14) 0 1px,
             transparent 2px
         ),
         radial-gradient(
             circle at 78% 30%,
-            rgba(255,244,210,.13) 0 1px,
+            rgba(255,244,210,.12) 0 1px,
             transparent 2px
         ),
         radial-gradient(
             circle at 42% 68%,
-            rgba(255,255,255,.11) 0 1px,
+            rgba(255,255,255,.10) 0 1px,
             transparent 2px
         ),
         linear-gradient(
             180deg,
-
-            /* MAUVE — curtains / honoured */
             #76516f 0%,
-            #805473 5%,
-            #925c7c 9%,
-
-            /* SOFT PINK */
-            #a96783 14%,
-            #bd748e 19%,
-            #d4889e 24%,
-            #df9faf 29%,
-
-            /* LIGHT BLUSH */
-            #eab4bf 34%,
-            #efc5cb 39%,
-            #edccd0 44%,
-
-            /* START OF GREEN AFTER COUNTDOWN */
-            #e4e8d7 49%,
-            #dce9da 53%,
-            #d4e8d8 57%,
-            #d8eacb 61%,
-
-            /* HALDI */
-            #e8eccb 65%,
-            #f0edc4 69%,
-            #f4eabd 73%,
-
-            /* NIKKAH */
-            #f2e4c9 77%,
-            #eddfc7 81%,
-            #e7d8bc 85%,
-
-            /* FINAL PINK */
-            #eac6c9 89%,
-            #e5aeb9 93%,
-            #dd98a8 97%,
+            #815674 5%,
+            #925d7d 10%,
+            #a96886 16%,
+            #bd7895 22%,
+            #d38da3 28%,
+            #e2a5b4 34%,
+            #edbcc6 40%,
+            #f1cbd0 46%,
+            #efd0d1 51%,
+            #e9d5d2 56%,
+            #dce5d3 61%,
+            #d2e3d3 66%,
+            #c8dfd0 71%,
+            #dfe3c7 76%,
+            #ece5c4 80%,
+            #f1e8c9 84%,
+            #eadfc9 88%,
+            #e8d8c1 92%,
+            #e7c3c9 96%,
             #d98a9d 100%
         );
 
@@ -1817,7 +1786,7 @@ body::before{
     >
 
         <source
-            src="./curtain .mp4"
+            src="./curtains.mp4"
             type="video/mp4"
         >
 
@@ -2190,7 +2159,7 @@ body::before{
             >
 
                 <source
-                    src="./milad .mp4"
+                    src="./milad.mp4"
                     type="video/mp4"
                 >
 
@@ -2726,8 +2695,6 @@ function startCurtainTransition(){
 
     curtainStarted = true;
 
-    curtainFrozen = false;
-
     try{
 
         curtainVideo.currentTime = 0;
@@ -2843,10 +2810,7 @@ curtainVideo.addEventListener(
         ){
 
             const freezeAt =
-                Math.max(
-                    0,
-                    curtainVideo.duration - 0.03
-                );
+                curtainVideo.duration - 0.03;
 
             if(
                 curtainVideo.currentTime >=
@@ -3281,6 +3245,7 @@ function revealScratch(){
 
 
     startConfetti();
+
 
 }
 
