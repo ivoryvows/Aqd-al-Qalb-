@@ -51,7 +51,18 @@ body{
         radial-gradient(circle at 18% 22%, rgba(255,255,255,.16) 0 1px, transparent 2px),
         radial-gradient(circle at 78% 34%, rgba(255,244,210,.14) 0 1px, transparent 2px),
         radial-gradient(circle at 42% 68%, rgba(255,255,255,.12) 0 1px, transparent 2px),
-        linear-gradient(180deg,#1e222f 0%,#303448 12%,#575268 25%,#806074 40%,#a86d80 55%,#c98596 70%,#dda4ad 82%,#edc4c9 92%,#f8ecef 100%);
+        linear-gradient(
+            180deg,
+            #1e222f 0%,
+            #303448 12%,
+            #575268 25%,
+            #806074 40%,
+            #a86d80 55%,
+            #c98596 70%,
+            #dda4ad 82%,
+            #edc4c9 92%,
+            #f8ecef 100%
+        );
 
     background-attachment:fixed;
 }
@@ -155,7 +166,7 @@ body.locked{
 
 
 /* =========================================================
-   CURTAIN
+   CURTAINS
 ========================================================= */
 
 #curtain-section{
@@ -171,7 +182,7 @@ body.locked{
 
     background:#171a24;
 
-    overflow:visible;
+    overflow:hidden;
 }
 
 #curtain-video{
@@ -213,7 +224,7 @@ body.locked{
 
     position:absolute;
 
-    bottom:-30px;
+    bottom:22px;
 
     left:50%;
 
@@ -427,12 +438,14 @@ body.locked{
     background:#c98596;
 }
 
-/* The dark-to-rose gradient now sits on the video transition
-   so there is no visible hard line before HONOURED. */
-#milad-section{
+#milad-transition{
+
     position:relative;
+
     width:100%;
+
     overflow:hidden;
+
     background:
         linear-gradient(
             180deg,
@@ -447,23 +460,30 @@ body.locked{
         );
 }
 
-#milad-section::after{
+#milad-transition::after{
+
     content:"";
+
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
-    height:38%;
-    pointer-events:none;
-    z-index:2;
-    background:linear-gradient(
-        to bottom,
-        rgba(201,133,150,0),
-        rgba(201,133,150,.96) 92%,
-        rgba(201,133,150,1) 100%
-    );
-}
 
+    height:38%;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(201,133,150,0),
+            rgba(201,133,150,.96) 92%,
+            rgba(201,133,150,1) 100%
+        );
+}
 
 #honoured-section .section-inner{
 
@@ -557,7 +577,7 @@ body.locked{
 
 
 /* =========================================================
-   LIGHT FALLING FLOWER PETALS — ALL NON-VIDEO FRAMES
+   PETALS
 ========================================================= */
 
 .global-petals{
@@ -618,8 +638,6 @@ body.locked{
 
     background:rgba(255,248,250,.58);
 }
-
-/* PETAL ANIMATION */
 
 @keyframes petalFall{
 
@@ -935,7 +953,7 @@ body.locked{
 
 
 /* =========================================================
-   SAVE THE DATE
+   SAVE DATE
 ========================================================= */
 
 .save-date-container{
@@ -1046,10 +1064,14 @@ body.locked{
 
 
 /* =========================================================
-   COUNTDOWN + TIMELINE
+   COUNTDOWN
 ========================================================= */
 
 #countdown-section{
+
+    position:relative;
+
+    overflow:hidden;
 
     background:
         linear-gradient(
@@ -1069,12 +1091,12 @@ body.locked{
     gap:6px;
 
     margin:
-        16px 0 25px;
+        16px 0 5px;
 }
 
 .countdown-box{
 
-    background:#e8c5cb;
+    background:rgba(232,197,203,.72);
 
     border-radius:12px;
 
@@ -1105,197 +1127,368 @@ body.locked{
     font-weight:600;
 }
 
-.timeline-header{
 
-    text-align:center;
+/* =========================================================
+   EVENT SECTIONS — NO BOXES
+========================================================= */
 
-    margin-bottom:18px;
-}
-
-.clock-icon{
-
-    font-size:1.2rem;
-
-    display:inline-block;
-
-    border:
-        1px solid #6c2432;
-
-    border-radius:50%;
-
-    padding:6px;
-
-    margin-bottom:3px;
-}
-
-.timeline{
+.event-video-section{
 
     position:relative;
 
-    text-align:left;
+    width:100%;
 
-    margin-left:5px;
+    min-height:auto;
+
+    overflow:hidden;
+
+    padding:
+        34px 14px 38px;
+
+    display:flex;
+
+    justify-content:center;
+
+    text-align:center;
 }
 
-.timeline::before{
+.event-video-section::before{
 
     content:"";
 
     position:absolute;
 
-    left:3.5px;
+    inset:0;
 
-    top:5px;
+    pointer-events:none;
 
-    bottom:5px;
+    z-index:0;
 
-    width:1.5px;
+    opacity:.45;
 
-    background:#d5a5ac;
+    background:
+        radial-gradient(
+            circle at 20% 18%,
+            rgba(255,255,255,.9) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 78% 28%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 42% 72%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 86% 84%,
+            rgba(255,255,255,.75) 0 1px,
+            transparent 2px
+        );
+
+    background-size:
+        130px 160px,
+        190px 210px,
+        220px 190px,
+        160px 180px;
+
+    animation:
+        eventShine 8s linear infinite;
 }
 
-.timeline-item{
+@keyframes eventShine{
 
-    position:relative;
+    0%{
+        background-position:
+            0 0,
+            40px 20px,
+            90px 0,
+            20px 50px;
+        opacity:.25;
+    }
 
-    padding-left:22px;
+    50%{
+        opacity:.6;
+    }
 
-    margin-bottom:17px;
+    100%{
+        background-position:
+            0 160px,
+            40px 230px,
+            90px 190px,
+            20px 180px;
+        opacity:.25;
+    }
 }
 
-.timeline-item:last-child{
+.event-video-section .section-inner{
 
-    margin-bottom:0;
+    max-width:430px;
+
+    z-index:2;
 }
 
-.timeline-dot{
+.event-kicker{
 
-    position:absolute;
+    font-family:'Cinzel',serif;
 
-    left:-.5px;
+    font-size:.65rem;
 
-    top:3px;
+    letter-spacing:3px;
 
-    width:8px;
-    height:8px;
+    color:#79525c;
 
-    border-radius:50%;
-
-    background:#6c2432;
+    margin-bottom:4px;
 }
 
 .event-title{
 
-    font-size:1.05rem;
+    font-family:'Great Vibes',cursive;
 
-    margin-bottom:2px;
+    font-size:3rem;
+
+    line-height:1.1;
+
+    font-weight:normal;
+
+    margin:
+        0 0 8px;
+
 }
 
-.event-time{
+.event-subtitle{
 
-    font-size:.83rem;
+    font-family:'Playfair Display',serif;
 
-    color:#7d424e;
+    font-size:.85rem;
 
-    margin-bottom:3px;
+    font-style:italic;
+
+    color:#73535b;
+
+    margin-bottom:16px;
 }
 
-.event-desc{
+.event-video-frame{
 
-    font-size:.82rem;
+    position:relative;
 
-    color:#7d424e;
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:0;
+
+    background:transparent;
+
+    box-shadow:none;
+
+    margin:
+        0 auto 17px;
 }
 
+.event-video-frame::after{
 
-/* =========================================================
-   VENUE
-========================================================= */
+    content:"";
 
-#venue-section{
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
 
     background:
         linear-gradient(
-            180deg,
-            rgba(248,235,239,.9),
-            rgba(244,220,226,.9),
-            rgba(240,210,218,.9)
+            120deg,
+            rgba(255,255,255,.12),
+            transparent 35%,
+            transparent 68%,
+            rgba(255,255,255,.08)
         );
+
+    z-index:2;
 }
 
-.venue-icon{
+.event-video{
 
-    font-size:1.3rem;
-
-    display:inline-block;
-
-    border:
-        1px solid #6c2432;
-
-    border-radius:50%;
-
-    padding:6px;
-}
-
-.venue-name{
-
-    font-size:1.35rem;
-
-    font-weight:600;
-
-    margin:
-        4px 0 7px;
-}
-
-.venue-address{
-
-    font-size:.9rem;
-
-    color:#7d424e;
-
-    line-height:1.5;
-
-    padding:
-        0 15px;
-
-    margin-bottom:14px;
-}
-
-.venue-illustration{
+    display:block;
 
     width:100%;
 
-    max-width:280px;
-
-    margin:
-        10px auto;
-}
-
-.venue-illustration svg{
-
-    width:100%;
     height:auto;
+
+    max-height:78vh;
+
+    object-fit:cover;
+
+    background:transparent;
 }
 
-.map-btn{
+.event-map-button{
 
     display:inline-block;
-
-    background:#6c2432;
-
-    color:white;
 
     text-decoration:none;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108,36,50,.94),
+            rgba(133,67,82,.94)
+        );
 
     padding:
         11px 25px;
 
     border-radius:6px;
 
-    font-size:.92rem;
+    font-size:.88rem;
+
+    letter-spacing:.4px;
 
     box-shadow:
-        0 4px 10px rgba(108,36,50,.15);
+        0 5px 14px rgba(108,36,50,.14);
+}
+
+.event-address{
+
+    font-size:.82rem;
+
+    color:#76535b;
+
+    line-height:1.5;
+
+    margin:
+        4px auto 14px;
+
+    max-width:350px;
+}
+
+
+/* =========================================================
+   MEHFIL-E-ZEHRA
+   SOFT MINT GREEN
+========================================================= */
+
+#mehfil-section{
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,.62),
+            transparent 48%
+        ),
+        linear-gradient(
+            180deg,
+            #e5f4ec 0%,
+            #d9eee4 35%,
+            #cde7dc 70%,
+            #c4e1d5 100%
+        );
+}
+
+#mehfil-section .event-title{
+
+    color:#477463;
+
+    text-shadow:
+        0 1px 8px rgba(255,255,255,.7);
+}
+
+#mehfil-section .event-kicker{
+
+    color:#668d7e;
+}
+
+#mehfil-section .event-subtitle{
+
+    color:#55786c;
+}
+
+
+/* =========================================================
+   HALDI
+   PASTEL LEMON YELLOW
+========================================================= */
+
+#haldi-section{
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,.7),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #fffbe0 0%,
+            #fff7c8 34%,
+            #fff1b3 68%,
+            #fbeaa2 100%
+        );
+}
+
+#haldi-section .event-title{
+
+    color:#8b7428;
+
+    text-shadow:
+        0 1px 8px rgba(255,255,255,.8);
+}
+
+#haldi-section .event-kicker{
+
+    color:#9c8a3c;
+}
+
+#haldi-section .event-subtitle{
+
+    color:#807033;
+}
+
+
+/* =========================================================
+   NIKKAH
+   SOFT BEIGE
+========================================================= */
+
+#nikkah-section{
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,.68),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #f8f0df 0%,
+            #f3e8d2 35%,
+            #eddfc5 70%,
+            #e8d8bc 100%
+        );
+}
+
+#nikkah-section .event-title{
+
+    color:#76543c;
+
+    text-shadow:
+        0 1px 8px rgba(255,255,255,.75);
+}
+
+#nikkah-section .event-kicker{
+
+    color:#92765a;
+}
+
+#nikkah-section .event-subtitle{
+
+    color:#765f49;
 }
 
 
@@ -1363,7 +1556,7 @@ body.locked{
 
 
 /* =========================================================
-   GIFTS ICON
+   GIFTS
 ========================================================= */
 
 .icon-container{
@@ -1405,7 +1598,8 @@ body.locked{
     padding:
         0 10px;
 }
-   .arabic-blessing{
+
+.arabic-blessing{
 
     font-family:'Amiri',serif;
 
@@ -1516,6 +1710,22 @@ body.locked{
         height:min(350px,90vw);
     }
 
+    .event-video-section{
+
+        padding:
+            30px 12px 34px;
+    }
+
+    .event-title{
+
+        font-size:2.65rem;
+    }
+
+    .event-video{
+
+        max-height:72vh;
+    }
+
     #music-button{
 
         right:14px;
@@ -1529,20 +1739,33 @@ body.locked{
 
 }
 
+
+/* =========================================================
+   ROYAL SHINE
+========================================================= */
+
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     z-index:999;
+
     opacity:.55;
 
     background-image:
+
         radial-gradient(
             circle,
             rgba(255,255,255,.8) 0 1px,
             transparent 1.8px
         ),
+
         radial-gradient(
             circle,
             rgba(255,235,190,.55) 0 1px,
@@ -1607,10 +1830,12 @@ body::before{
         disablepictureinpicture
         controlslist="nodownload noplaybackrate"
     >
+
         <source
             src="./open.mp4"
             type="video/mp4"
         >
+
     </video>
 
     <div id="opening-tap"></div>
@@ -1619,7 +1844,7 @@ body::before{
 
 
 <!-- =======================================================
-     CURTAIN
+     CURTAINS
 ======================================================= -->
 
 <section id="curtain-section">
@@ -1635,14 +1860,13 @@ body::before{
     >
 
         <source
-            src="./curtain .mp4"
+            src="./curtains.mp4"
             type="video/mp4"
         >
 
     </video>
 
     <div class="curtain-soft-layer"></div>
-
 
     <div id="scrollHint">
 
@@ -1655,33 +1879,6 @@ body::before{
         </div>
 
     </div>
-
-</section>
-
-
-<!-- =======================================================
-     MILAD VIDEO
-======================================================= -->
-
-<section id="milad-section" style="position:relative;width:100%;overflow:hidden;background:transparent;">
-
-    <video
-        id="milad-video"
-        muted
-        playsinline
-        webkit-playsinline
-        autoplay
-        loop
-        preload="auto"
-        style="position:relative;z-index:1;display:block;width:100%;height:auto;max-height:100vh;object-fit:cover;"
-    >
-
-        <source
-            src="./milad .mp4"
-            type="video/mp4"
-        >
-
-    </video>
 
 </section>
 
@@ -1723,7 +1920,6 @@ body::before{
 
         </div>
 
-
         <div class="honoured-text">
 
             We are honored to welcome you to the
@@ -1753,7 +1949,6 @@ body::before{
             </span>
 
         </div>
-
 
         <div class="honoured-divider">
 
@@ -1839,11 +2034,9 @@ body::before{
             Our Special Day
         </div>
 
-
         <div class="heart-wrapper">
 
             <div class="heart-border"></div>
-
 
             <div class="revealed-content">
 
@@ -1865,13 +2058,11 @@ body::before{
 
             </div>
 
-
             <canvas
                 id="scratch-canvas"
                 width="360"
                 height="360"
             ></canvas>
-
 
             <div class="scratch-sparkles">
 
@@ -1886,7 +2077,6 @@ body::before{
             </div>
 
         </div>
-
 
         <div class="save-date-container">
 
@@ -1905,13 +2095,11 @@ body::before{
 </section>
 
 
-<!-- CONFETTI -->
-
 <div id="confetti-box"></div>
 
 
 <!-- =======================================================
-     COUNTDOWN + TIMELINE
+     COUNTDOWN ONLY
 ======================================================= -->
 
 <section
@@ -1934,7 +2122,6 @@ body::before{
             ♥
         </div>
 
-
         <div class="countdown-container">
 
             <div class="countdown-box">
@@ -1952,7 +2139,6 @@ body::before{
 
             </div>
 
-
             <div class="countdown-box">
 
                 <div
@@ -1968,7 +2154,6 @@ body::before{
 
             </div>
 
-
             <div class="countdown-box">
 
                 <div
@@ -1983,7 +2168,6 @@ body::before{
                 </div>
 
             </div>
-
 
             <div class="countdown-box">
 
@@ -2002,68 +2186,138 @@ body::before{
 
         </div>
 
+    </div>
 
-        <div class="timeline-header">
+</section>
 
-            <div class="clock-icon">
-                🕒
-            </div>
 
-            <div
-                class="script-title"
-                style="font-size:1.85rem;margin:0;"
+<!-- =======================================================
+     MEHFIL-E-ZEHRA
+======================================================= -->
+
+<section
+    class="event-video-section"
+    id="mehfil-section"
+>
+
+    <div
+        class="global-petals"
+        id="mehfil-petals"
+    ></div>
+
+    <div class="section-inner">
+
+        <div class="event-kicker">
+            A BEAUTIFUL EVENING
+        </div>
+
+        <div class="event-title">
+            Mehfil-e-Zehra
+        </div>
+
+        <div class="event-subtitle">
+            An evening of love, remembrance and blessings
+        </div>
+
+        <div class="event-video-frame">
+
+            <video
+                class="event-video"
+                id="milad-video"
+                muted
+                playsinline
+                webkit-playsinline
+                autoplay
+                loop
+                preload="auto"
             >
-                Programs Schedule
-            </div>
 
-            <div class="divider">
-                ♥
-            </div>
+                <source
+                    src="./milad.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
 
         </div>
 
+        <div class="event-address">
+            Sarovar Portico, Ahmedabad
+        </div>
 
-        <div class="timeline">
+        <a
+            class="event-map-button"
+            href="https://www.google.com/maps/search/?api=1&query=Sarovar+Portico+Ahmedabad"
+            target="_blank"
+            rel="noopener"
+        >
+            View Sarovar Portico on Google Maps
+        </a>
 
+    </div>
 
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <h3 class="event-title">
-                    Aameen
-                </h3>
-
-                <div class="event-time">
-                    Nov 27, 2026 : venue - Sarovar Portico
-                </div>
-
-                <p class="event-desc">
-                    We Warmly welcome you.. !
-                </p>
-
-            </div>
+</section>
 
 
-            <div class="timeline-item">
+<!-- =======================================================
+     HALDI
+======================================================= -->
 
-                <div class="timeline-dot"></div>
+<section
+    class="event-video-section"
+    id="haldi-section"
+>
 
-                <h3 class="event-title">
-                    Nikkah
-                </h3>
+    <div
+        class="global-petals"
+        id="haldi-petals"
+    ></div>
 
-                <div class="event-time">
-                    Nov 29, 2026 : Venue - YMCA Club
-                </div>
+    <div class="section-inner">
 
-                <p class="event-desc">
-                    Your gracious presence is requested ❤️
-                </p>
+        <div class="event-kicker">
+            WITH LOVE &amp; JOY
+        </div>
 
-            </div>
+        <div class="event-title">
+            Haldi
+        </div>
 
+        <div class="event-subtitle">
+            A beautiful celebration filled with sunshine and happiness
+        </div>
 
+        <div class="event-video-frame">
+
+            <video
+                class="event-video"
+                id="haldi-video"
+                muted
+                playsinline
+                webkit-playsinline
+                autoplay
+                loop
+                preload="auto"
+            >
+
+                <source
+                    src="./haldi.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+        <div class="event-kicker" style="margin-top:8px;">
+            AT OUR RESIDENCE
+        </div>
+
+        <div
+            class="event-subtitle"
+            style="margin-bottom:0;"
+        >
+            With our loved ones, surrounded by warmth and joy
         </div>
 
     </div>
@@ -2072,165 +2326,67 @@ body::before{
 
 
 <!-- =======================================================
-     VENUE
+     NIKKAH
 ======================================================= -->
 
 <section
-    class="invitation-section"
-    id="venue-section"
+    class="event-video-section"
+    id="nikkah-section"
 >
 
     <div
         class="global-petals"
-        id="venue-section-petals"
+        id="nikkah-petals"
     ></div>
 
     <div class="section-inner">
 
-        <div class="venue-icon">
-            📍
+        <div class="event-kicker">
+            THE SACRED CEREMONY
         </div>
 
-        <div class="script-title">
-            Venue
+        <div class="event-title">
+            Nikkah
         </div>
 
-        <div class="divider">
-            ♥
+        <div class="event-subtitle">
+            The beginning of a beautiful journey together
         </div>
 
-        <div class="venue-name">
-            YMCA Club
-        </div>
+        <div class="event-video-frame">
 
-        <div class="venue-address">
-
-            Sarkhej - Gandhinagar Hwy,
-            Makarba, Ahmedabad, Gujarat 380015,
-            India
-
-        </div>
-
-
-        <div class="venue-illustration">
-
-            <svg
-                viewBox="0 0 300 120"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <video
+                class="event-video"
+                id="nikkah-video"
+                muted
+                playsinline
+                webkit-playsinline
+                autoplay
+                loop
+                preload="auto"
             >
 
-                <path
-                    d="M10 110H290"
-                    stroke="#6c2432"
-                    stroke-width="1.5"
-                />
+                <source
+                    src="./nikkah.mp4"
+                    type="video/mp4"
+                >
 
-                <path
-                    d="M20 105H280"
-                    stroke="#6c2432"
-                    stroke-width="1"
-                />
-
-                <path
-                    d="M130 110V70C130 55 170 55 170 70V110"
-                    stroke="#6c2432"
-                    stroke-width="1.2"
-                />
-
-                <path
-                    d="M140 110V85C140 75 160 75 160 85V110"
-                    stroke="#6c2432"
-                    stroke-width="1"
-                />
-
-                <path
-                    d="M142 55C142 40 158 40 158 55"
-                    stroke="#6c2432"
-                    stroke-width="1.2"
-                />
-
-                <circle
-                    cx="150"
-                    cy="37"
-                    r="2"
-                    fill="#6c2432"
-                />
-
-                <path
-                    d="M50 110V50L60 40L70 50V110"
-                    stroke="#6c2432"
-                    stroke-width="1.2"
-                />
-
-                <circle
-                    cx="60"
-                    cy="37"
-                    r="1.5"
-                    fill="#6c2432"
-                />
-
-                <path
-                    d="M230 110V50L240 40L250 50V110"
-                    stroke="#6c2432"
-                    stroke-width="1.2"
-                />
-
-                <circle
-                    cx="240"
-                    cy="37"
-                    r="1.5"
-                    fill="#6c2432"
-                />
-
-                <path
-                    d="M70 110V75C70 65 130 65 130 75V110"
-                    stroke="#6c2432"
-                    stroke-width="1"
-                />
-
-                <path
-                    d="M170 110V75C170 65 230 65 230 75V110"
-                    stroke="#6c2432"
-                    stroke-width="1"
-                />
-
-                <path
-                    d="M90 110V90C90 85 100 85 100 90V110"
-                    stroke="#6c2432"
-                    stroke-width=".8"
-                />
-
-                <path
-                    d="M110 110V90C110 85 120 85 120 90V110"
-                    stroke="#6c2432"
-                    stroke-width=".8"
-                />
-
-                <path
-                    d="M180 110V90C180 85 190 85 190 90V110"
-                    stroke="#6c2432"
-                    stroke-width=".8"
-                />
-
-                <path
-                    d="M200 110V90C200 85 210 85 210 90V110"
-                    stroke="#6c2432"
-                    stroke-width=".8"
-                />
-
-            </svg>
+            </video>
 
         </div>
 
+        <div class="event-address">
+            YMCA Club, Sarkhej - Gandhinagar Hwy,
+            Makarba, Ahmedabad, Gujarat 380015, India
+        </div>
 
         <a
+            class="event-map-button"
             href="https://www.google.com/maps/search/?api=1&query=YMCA+Club%2C+Sarkhej+-+Gandhinagar+Hwy%2C+Makarba%2C+Ahmedabad%2C+Gujarat+380015%2C+India"
             target="_blank"
             rel="noopener"
-            class="map-btn"
         >
-            View on Google Maps
+            View YMCA Club on Google Maps
         </a>
 
     </div>
@@ -2254,7 +2410,6 @@ body::before{
 
     <div class="section-inner">
 
-
         <div class="script-title">
             Dress Code
         </div>
@@ -2263,7 +2418,6 @@ body::before{
             ♥
         </div>
 
-
         <div class="cute-message">
 
             "We can't wait to celebrate our special day
@@ -2271,7 +2425,6 @@ body::before{
             for our favorite people."
 
         </div>
-
 
         <div class="category-title">
             Women
@@ -2282,7 +2435,6 @@ body::before{
         <div class="category-desc">
             Elegant formal attire in pastel or jewel tones
         </div>
-
 
         <div
             class="category-title"
@@ -2296,7 +2448,6 @@ body::before{
         <div class="category-desc">
             Suit or traditional formal wear
         </div>
-
 
     </div>
 
@@ -2342,7 +2493,6 @@ body::before{
 
         </div>
 
-
         <div class="script-title">
             Gifts
         </div>
@@ -2350,7 +2500,6 @@ body::before{
         <div class="divider">
             ♥
         </div>
-
 
         <div class="gifts-text">
 
@@ -2361,7 +2510,6 @@ body::before{
             teachings of the Ahlulbayt."
 
         </div>
-
 
         <div class="arabic-blessing">
 
@@ -2413,7 +2561,9 @@ body::before{
 
         <div class="celebrate-text">
             We can't wait to celebrate<br>
-            <span style="font-size:2.4rem;margin-top:5px;display:inline-block;">with you!</span>
+            <span style="font-size:2.4rem;margin-top:5px;display:inline-block;">
+                with you!
+            </span>
         </div>
 
         <div class="names-text">
@@ -2530,7 +2680,7 @@ musicButton.addEventListener(
 
 
 /* =========================================================
-   PRELOAD CURTAIN
+   PRELOAD CURTAINS
 ========================================================= */
 
 curtainVideo.pause();
@@ -2553,10 +2703,8 @@ openingTap.addEventListener(
         openingTap.style.pointerEvents =
             "none";
 
-
         openingPoster.style.opacity =
             "0";
-
 
         try{
 
@@ -2577,10 +2725,8 @@ openingTap.addEventListener(
 
         }
 
-
         openingVideo.style.display =
             "block";
-
 
         requestAnimationFrame(
             function(){
@@ -2590,7 +2736,6 @@ openingTap.addEventListener(
 
             }
         );
-
 
         try{
 
@@ -2610,7 +2755,7 @@ openingTap.addEventListener(
 
 
 /* =========================================================
-   OPENING → CURTAIN
+   OPENING → CURTAINS
 ========================================================= */
 
 let curtainStarted = false;
@@ -2624,7 +2769,6 @@ function startCurtainTransition(){
 
     curtainStarted = true;
 
-
     try{
 
         curtainVideo.currentTime = 0;
@@ -2636,7 +2780,7 @@ function startCurtainTransition(){
         function(error){
 
             console.log(
-                "Curtain playback issue:",
+                "Curtains playback issue:",
                 error
             );
 
@@ -2689,7 +2833,6 @@ openingVideo.addEventListener(
                 openingVideo.duration -
                 openingVideo.currentTime;
 
-
             if(
                 remaining <= .35 &&
                 !curtainStarted
@@ -2720,7 +2863,7 @@ openingVideo.addEventListener(
 
 
 /* =========================================================
-   CURTAIN
+   CURTAINS
    FREEZE EXACTLY 0.03 SECONDS BEFORE END
 ========================================================= */
 
@@ -2735,7 +2878,6 @@ curtainVideo.addEventListener(
             return;
         }
 
-
         if(
             curtainVideo.duration &&
             isFinite(curtainVideo.duration)
@@ -2744,14 +2886,12 @@ curtainVideo.addEventListener(
             const freezeAt =
                 curtainVideo.duration - 0.03;
 
-
             if(
                 curtainVideo.currentTime >=
                 freezeAt
             ){
 
                 curtainFrozen = true;
-
 
                 try{
 
@@ -2760,14 +2900,11 @@ curtainVideo.addEventListener(
 
                 }catch(error){}
 
-
                 curtainVideo.pause();
-
 
                 document.body.classList.remove(
                     "locked"
                 );
-
 
                 scrollHint.classList.add(
                     "show"
@@ -2820,13 +2957,9 @@ const scratchCtx =
 
 
 let scratchDrawing = false;
-
 let scratchRevealed = false;
-
 let lastX = null;
-
 let lastY = null;
-
 let lastProgressCheck = 0;
 
 
@@ -2960,7 +3093,9 @@ function scratch(event){
         !scratchDrawing ||
         scratchRevealed
     ){
+
         return;
+
     }
 
 
@@ -3048,12 +3183,12 @@ function scratch(event){
 
 
     lastX = position.x;
-
     lastY = position.y;
 
 
     const now =
         performance.now();
+
 
     if(
         now - lastProgressCheck > 120
@@ -3093,7 +3228,6 @@ function checkScratchProgress(){
 
 
     let transparent = 0;
-
     let checked = 0;
 
 
@@ -3132,7 +3266,7 @@ function checkScratchProgress(){
 
 
 /* =========================================================
-   REVEAL SCRATCH
+   REVEAL
 ========================================================= */
 
 function revealScratch(){
@@ -3379,7 +3513,7 @@ function startConfetti(){
 
 
 /* =========================================================
-   SAVE THE DATE — NOVEMBER 29, 2026
+   SAVE THE DATE
 ========================================================= */
 
 const saveDateButton =
@@ -3398,18 +3532,14 @@ saveDateButton.addEventListener(
         const endDate =
             "20261130";
 
-
         const calendarTitle =
             "Mizan & Zainab — Wedding";
-
 
         const calendarDescription =
             "Save the date for Mizan & Zainab's wedding.";
 
-
         const calendarLocation =
             "YMCA Club, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015, India";
-
 
         const dtStamp =
             new Date()
@@ -3492,7 +3622,7 @@ END:VCALENDAR`;
 
 
 /* =========================================================
-   COUNTDOWN — NOVEMBER 29, 2026
+   COUNTDOWN
 ========================================================= */
 
 const targetDate =
@@ -3505,7 +3635,6 @@ function updateCountdown(){
 
     const now =
         new Date().getTime();
-
 
     const distance =
         targetDate - now;
@@ -3634,18 +3763,80 @@ setInterval(
 
 
 /* =========================================================
-   TINY FALLING PETALS
-   ONLY AYAT + GIFTS
+   EVENT VIDEOS — PLAY WHEN VISIBLE
 ========================================================= */
 
-function createPetals(layerId, amount){
+const eventVideos =
+    document.querySelectorAll(
+        ".event-video"
+    );
+
+
+const eventVideoObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    const video =
+                        entry.target;
+
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        video.play().catch(
+                            function(){}
+                        );
+
+                    }else{
+
+                        video.pause();
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.25
+        }
+    );
+
+
+eventVideos.forEach(
+    function(video){
+
+        eventVideoObserver.observe(
+            video
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+function createPetals(
+    layerId,
+    amount
+){
 
     const layer =
-        document.getElementById(layerId);
+        document.getElementById(
+            layerId
+        );
+
 
     if(!layer){
         return;
     }
+
 
     for(
         let i = 0;
@@ -3654,51 +3845,81 @@ function createPetals(layerId, amount){
     ){
 
         const petal =
-            document.createElement("span");
+            document.createElement(
+                "span"
+            );
+
 
         petal.className =
             "petal";
 
+
         petal.style.left =
-            Math.random() * 100 + "%";
+            Math.random() * 100 +
+            "%";
+
 
         petal.style.animationDuration =
-            (Math.random() * 7 + 7) + "s";
+            (
+                Math.random() * 7 +
+                7
+            ) + "s";
+
 
         petal.style.animationDelay =
-            (Math.random() * -12) + "s";
+            (
+                Math.random() * -12
+            ) + "s";
+
 
         petal.style.opacity =
-            (Math.random() * .45 + .4);
+            (
+                Math.random() * .45 +
+                .4
+            );
+
 
         petal.style.transform =
             "rotate(" +
             Math.random() * 360 +
             "deg)";
 
-        layer.appendChild(petal);
+
+        layer.appendChild(
+            petal
+        );
+
     }
+
 }
 
+
+/* ALL DELICATE NON-VIDEO SECTIONS */
 
 [
     "honoured-section-petals",
     "ayat-section-petals",
     "scratch-section-petals",
     "countdown-section-petals",
-    "venue-section-petals",
+    "mehfil-petals",
+    "haldi-petals",
+    "nikkah-petals",
     "dress-section-petals",
     "gifts-section-petals",
     "last-petals"
-].forEach(function(layerId){
+].forEach(
+    function(layerId){
 
-    createPetals(layerId, 28);
+        createPetals(
+            layerId,
+            24
+        );
 
-});
+    }
+);
 
 </script>
 
 </body>
 
 </html>
-
