@@ -11,1767 +11,756 @@
 <meta property="og:title" content="Zainab & Mizan">
 <meta property="og:description" content="A beautiful beginning of forever.">
 <meta property="og:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.JPG">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ivoryvows.github.io/Aqd-al-Qalb-/">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zainab & Mizan">
-<meta name="twitter:description" content="A beautiful beginning of forever.">
-<meta name="twitter:image" content="https://ivoryvows.github.io/Aqd-al-Qalb-/msg.JPG">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:wght@400;700&family=Cinzel:wght@400;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   GLOBAL
-========================================================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html,
+body{
+    width:100%;
+    min-height:100%;
 }
 
 body{
-    margin:0;
-    font-family:'Playfair Display',serif;
-    color:#6c2432;
+    font-family:"Playfair Display",serif;
+    color:#5a4050;
     overflow-x:hidden;
 
     /* ONE CONTINUOUS GRADIENT
-       MAUVE at the beginning
-       → soft pink
-       → pastel pink
-       → GREEN starts AFTER COUNTDOWN
-       → pastel yellow
-       → beige/golden
-       → soft pink
+       MAUVE / PURPLE
+       → PINKISH
+       → SOFT PINK
+       → PASTEL GREEN FROM MEHFIL-E-ZEHRA
+       → YELLOW IN HALDI
+       → BEIGE / GOLDEN IN NIKKAH
+       → SOFT PINK AT THE END
     */
 
     background:
-        radial-gradient(
-            circle at 18% 18%,
-            rgba(255,255,255,.14) 0 1px,
-            transparent 2px
-        ),
-        radial-gradient(
-            circle at 78% 30%,
-            rgba(255,244,210,.12) 0 1px,
-            transparent 2px
-        ),
-        radial-gradient(
-            circle at 42% 68%,
-            rgba(255,255,255,.10) 0 1px,
-            transparent 2px
-        ),
-        linear-gradient(
-            180deg,
-            #76516f 0%,
-            #815674 5%,
-            #925d7d 10%,
-            #a96886 16%,
-            #bd7895 22%,
-            #d38da3 28%,
-            #e2a5b4 34%,
-            #edbcc6 40%,
-            #f1cbd0 46%,
-            #efd0d1 51%,
-            #e9d5d2 56%,
-            #dce5d3 61%,
-            #d2e3d3 66%,
-            #c8dfd0 71%,
-            #dfe3c7 76%,
-            #ece5c4 80%,
-            #f1e8c9 84%,
-            #eadfc9 88%,
-            #e8d8c1 92%,
-            #e7c3c9 96%,
-            #d98a9d 100%
-        );
+    linear-gradient(
+        180deg,
 
-    background-size:100% 100%;
+        /* Curtains / Honoured — Mauve Purple */
+        #71506f 0%,
+        #805677 5%,
+        #925f7f 10%,
+
+        /* Pinkish */
+        #a96988 15%,
+        #bc7894 21%,
+        #cf8da3 27%,
+
+        /* Soft Pink */
+        #df9faf 33%,
+        #e9b7c0 39%,
+        #f0c9cd 45%,
+
+        /* Mehfil-e-Zehra — Pastel Green starts here */
+        #e8d2d0 49%,
+        #dce4d3 52%,
+        #d1e3d3 56%,
+        #c8dfcf 61%,
+        #cfe3cd 65%,
+
+        /* Haldi — Yellow */
+        #e1e5c1 69%,
+        #e9e5b9 72%,
+        #f1e7b9 75%,
+        #f3e9c5 78%,
+
+        /* Nikkah — Beige / Golden */
+        #eee2ca 81%,
+        #e8d9c0 84%,
+        #dfcfb3 87%,
+        #e5d3ba 90%,
+
+        /* Ending — Soft Pink */
+        #e8c4c7 94%,
+        #dfa2ad 97%,
+        #d78a9d 100%
+    );
+
     background-attachment:scroll;
 }
 
-body.locked{
-    height:100vh;
-    overflow:hidden;
-}
+/* ROYAL SOFT SHINE */
 
-
-/* =========================================================
-   OPENING SCREEN
-========================================================= */
-
-#opening-screen{
-
+body::before{
+    content:"";
     position:fixed;
     inset:0;
+    pointer-events:none;
+    z-index:0;
 
-    width:100vw;
-    height:100vh;
-    height:100dvh;
-    min-height:100svh;
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.18) 0,
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 82% 35%,
+            rgba(255,255,255,.14) 0,
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 45% 70%,
+            rgba(255,245,210,.12) 0,
+            transparent 24%
+        );
 
-    background:#171a24;
+    animation:royalShine 8s ease-in-out infinite alternate;
+}
 
-    z-index:9999;
+@keyframes royalShine{
+    from{
+        opacity:.45;
+        transform:scale(1);
+    }
 
+    to{
+        opacity:.85;
+        transform:scale(1.04);
+    }
+}
+
+body.locked{
     overflow:hidden;
-
-    opacity:1;
-
-    transition:
-        opacity 1.2s cubic-bezier(.22,.61,.36,1);
-
-    will-change:opacity;
 }
 
-#opening-poster{
-
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-    height:100dvh;
-
-    object-fit:cover;
-    object-position:center center;
-
-    z-index:1;
-
-    display:block;
-
-    transition:
-        opacity .35s ease;
-
-    user-select:none;
-    -webkit-user-drag:none;
-}
-
-#opening-video{
-
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-    height:100dvh;
-
-    object-fit:cover;
-    object-position:center center;
-
-    z-index:2;
-
-    display:none;
-
-    opacity:0;
-
-    transition:
-        opacity .55s ease;
-
-    will-change:opacity;
-
-    background:#171a24;
-}
-
-#opening-tap{
-
-    position:absolute;
-    inset:0;
-
-    z-index:10;
-
-    cursor:pointer;
-
-    -webkit-tap-highlight-color:transparent;
-
-    touch-action:manipulation;
-}
-
-
-/* =========================================================
-   CURTAINS
-========================================================= */
-
-#curtain-section{
-
+section{
     position:relative;
-
     width:100%;
-    height:100vh;
-    height:100dvh;
-
     min-height:100vh;
-    min-height:100dvh;
-
     background:transparent;
-
     overflow:hidden;
+    z-index:1;
 }
 
-#curtain-video{
+/* OPENING */
 
+#opening-screen{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#0e0b12;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    transition:opacity 1.2s ease;
+}
+
+#envelopePoster,
+#envelopeVideo{
     position:absolute;
     inset:0;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-    object-position:center center;
-
-    display:block;
-
-    background:#171a24;
-
-    will-change:transform;
 }
 
-.curtain-soft-layer{
+#envelopeVideo{
+    display:none;
+}
 
+#tapOverlay{
     position:absolute;
     inset:0;
-
-    pointer-events:none;
-
-    background:rgba(0,0,0,.025);
-
-    z-index:2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5;
+    background:rgba(0,0,0,.08);
 }
 
-
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
-
-#scrollHint{
-
-    position:absolute;
-
-    bottom:22px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    z-index:20;
-
-    text-align:center;
-
-    color:white;
-
-    pointer-events:none;
-
-    opacity:0;
-
-    transition:opacity .8s ease;
-
+#tapText{
+    font-family:"Great Vibes",cursive;
+    font-size:34px;
+    color:#fff8e8;
     text-shadow:
-        0 2px 7px rgba(0,0,0,.35);
+        0 0 8px rgba(255,255,255,.5),
+        0 0 18px rgba(210,170,100,.5);
+    animation:tapPulse 2s infinite;
 }
 
-#scrollHint.show{
-    opacity:.95;
-}
-
-.scroll-text{
-
-    font-family:'Cinzel',serif;
-
-    font-size:9px;
-
-    letter-spacing:3px;
-
-    margin-bottom:3px;
-}
-
-.scroll-arrow{
-
-    font-family:Arial,sans-serif;
-
-    font-size:24px;
-
-    line-height:1;
-
-    animation:
-        scrollFloat 1.8s ease-in-out infinite;
-}
-
-@keyframes scrollFloat{
-
+@keyframes tapPulse{
     0%,100%{
-        transform:translateY(0);
-        opacity:.65;
+        opacity:.7;
+        transform:scale(1);
     }
 
     50%{
-        transform:translateY(6px);
         opacity:1;
+        transform:scale(1.06);
     }
 }
 
+/* CURTAINS */
 
-/* =========================================================
-   MUSIC BUTTON
-========================================================= */
-
-#music-button{
-
-    position:fixed;
-
-    right:17px;
-    bottom:17px;
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(108,36,50,.35);
-
-    background:rgba(255,248,250,.9);
-
-    color:#6c2432;
-
+#curtain-section{
+    min-height:100vh;
     display:flex;
-
     justify-content:center;
     align-items:center;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    z-index:10001;
-
-    box-shadow:
-        0 4px 15px rgba(70,30,40,.16);
-
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(5px);
-
-    -webkit-tap-highlight-color:transparent;
-
-    transition:
-        transform .25s ease,
-        background .25s ease;
-}
-
-#music-button:active{
-    transform:scale(.92);
-}
-
-
-/* =========================================================
-   COMMON SECTIONS
-========================================================= */
-
-.invitation-section{
-
-    position:relative;
-
-    width:100%;
-
-    min-height:auto;
-
-    padding:
-        22px 14px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
     background:transparent;
 }
 
-.section-inner{
-
-    position:relative;
-    z-index:2;
-
+#curtain-video{
     width:100%;
-
-    max-width:400px;
-
-    margin:auto;
+    height:100vh;
+    object-fit:cover;
+    display:block;
 }
 
-.script-title{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:2.5rem;
-
-    font-weight:normal;
-
-    color:#6c2432;
-
-    margin:
-        4px 0 7px;
-}
-
-.divider{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    color:#6c2432;
-
-    margin:
-        7px 0 10px;
-
-    font-size:14px;
-}
-
-.divider::before,
-.divider::after{
-
-    content:"";
-
-    flex:1;
-
-    height:1px;
-
-    background:
-        rgba(108,36,50,.25);
-
-    margin:
-        0 12px;
-}
-
-
-/* =========================================================
-   HONOURED
-========================================================= */
-
-#honoured-section{
-
-    position:relative;
-
-    color:#f7f3f4;
-
-    overflow:visible;
-
-    margin-top:-1px;
-
-    background:transparent;
-}
-
-#milad-transition{
-
-    position:relative;
-
-    width:100%;
-
-    overflow:hidden;
-
-    background:transparent;
-}
-
-#milad-transition::after{
-
-    content:"";
-
+.curtain-soft-layer{
     position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:38%;
-
+    inset:0;
     pointer-events:none;
-
-    z-index:2;
-
     background:
-        linear-gradient(
-            to bottom,
-            rgba(201,133,150,0),
-            rgba(201,133,150,.45) 92%,
-            rgba(201,133,150,.55) 100%
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.04),
+            rgba(80,40,70,.08)
         );
 }
 
-#honoured-section .section-inner{
-
-    max-width:430px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.honoured-divider{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    margin:8px auto;
-}
-
-.honoured-divider::before,
-.honoured-divider::after{
-
-    content:"";
-
-    width:80px;
-
-    height:1px;
-
-    background:
-        rgba(243,240,241,.4);
-}
-
-.honoured-heart{
-
-    color:#e8a5b0;
-
-    font-size:15px;
-
-    margin:
-        0 12px;
-}
-
-.honoured-text{
-
-    font-family:'Alex Brush',cursive;
-
-    font-size:27px;
-
-    line-height:1.48;
-
-    color:#f7f3f4;
-
-    text-shadow:
-        0 2px 4px rgba(0,0,0,.3);
-}
-
-.red-heart{
-
-    color:#e02424;
-
-    font-size:23px;
-}
-
-
-/* =========================================================
-   AYAT
-========================================================= */
-
-#ayat-section{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:transparent;
-}
-
-#ayat-section .section-inner{
-
-    position:relative;
-
-    z-index:2;
-}
-
-
-/* =========================================================
-   PETALS
-========================================================= */
-
-.global-petals{
-
+.scroll-hint{
     position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:0;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:"Cinzel",serif;
+    font-size:11px;
+    letter-spacing:3px;
+    color:#fff7ec;
+    opacity:0;
+    transition:opacity 1s ease;
 }
 
-.global-petals .petal{
+.scroll-hint.show{
+    opacity:.85;
+}
 
+/* MUSIC */
+
+#musicBtn{
+    position:fixed;
+    right:16px;
+    top:16px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.65);
+    background:rgba(90,55,75,.32);
+    backdrop-filter:blur(8px);
+    color:#fff;
+    z-index:9000;
+    font-size:17px;
+}
+
+/* PETALS */
+
+.petal{
     position:absolute;
-
-    top:-18px;
-
-    width:4px;
-    height:6px;
-
-    border-radius:70% 30% 70% 30%;
-
-    background:rgba(255,245,248,.58);
-
-    opacity:.34;
-
-    animation:
-        petalFall linear infinite,
-        petalSway ease-in-out infinite alternate;
-
-    filter:blur(.15px);
-}
-
-.global-petals .petal:nth-child(3n){
-
-    width:3px;
-    height:5px;
-
-    background:rgba(255,205,214,.62);
-}
-
-.global-petals .petal:nth-child(4n){
-
-    width:3px;
-    height:4px;
-
-    background:rgba(255,232,238,.68);
-}
-
-.global-petals .petal:nth-child(5n){
-
     width:5px;
-    height:5px;
-
-    background:rgba(255,248,250,.58);
+    height:8px;
+    border-radius:100%;
+    background:rgba(255,255,255,.38);
+    pointer-events:none;
+    animation:petalFall linear infinite;
 }
 
 @keyframes petalFall{
 
     0%{
-        transform:
-            translateY(-15px)
-            rotate(0deg);
+        transform:translateY(-20px) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
     }
 
     100%{
-        transform:
-            translateY(110vh)
-            rotate(360deg);
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
     }
 }
 
-@keyframes petalSway{
+/* HONOURED */
 
-    0%{
-        margin-left:-18px;
-    }
-
-    100%{
-        margin-left:18px;
-    }
+#honoured-section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:70px 25px;
+    text-align:center;
+    background:transparent;
 }
 
-.arabic-text{
+.honoured-content{
+    max-width:700px;
+}
 
-    font-family:'Amiri',serif;
+.small-title{
+    font-family:"Cinzel",serif;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:25px;
+    color:#694b59;
+}
 
-    font-weight:700;
+.script-title{
+    font-family:"Great Vibes",cursive;
+    font-size:58px;
+    line-height:1.1;
+    color:#713f59;
+    margin-bottom:25px;
+}
 
-    font-size:1.3rem;
-
-    color:#6c2432;
-
-    direction:rtl;
-
+.body-text{
+    font-size:16px;
     line-height:2;
-
-    padding:
-        0 8px;
-
-    margin-bottom:13px;
+    color:#634d58;
 }
 
-.verse-translation{
+/* AYAT */
 
+#ayat-section{
+    min-height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:70px 24px;
+}
+
+.ayat-box{
+    max-width:750px;
+}
+
+.ayat-heading{
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.ayat-script{
+    font-family:"Great Vibes",cursive;
+    font-size:52px;
+    color:#754b60;
+    margin-bottom:35px;
+}
+
+.arabic{
+    font-size:25px;
+    line-height:2;
+    direction:rtl;
+    color:#5e4a52;
+    margin-bottom:25px;
+}
+
+.translation{
     font-style:italic;
-
-    font-size:.9rem;
-
-    color:#7d424e;
-
-    line-height:1.55;
-
-    padding:
-        0 12px;
+    font-size:15px;
+    line-height:1.9;
 }
 
-
-/* =========================================================
-   SCRATCH
-========================================================= */
+/* SCRATCH */
 
 #scratch-section{
-
-    background:transparent;
-
-    padding-top:22px;
-    padding-bottom:22px;
-}
-
-.scratch-title{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:2.7rem;
-
-    color:#6b3e43;
-
-    margin-bottom:12px;
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.heart-wrapper{
-
-    position:relative;
-
-    width:min(360px,88vw);
-
-    height:min(360px,88vw);
-
-    margin:
-        0 auto 17px;
-}
-
-.heart-border{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:1;
-
-    background:
-        linear-gradient(
-            135deg,
-            #5b1f2d 0%,
-            #873b4b 38%,
-            #b55e6d 68%,
-            #6c2432 100%
-        );
-
-    clip-path:
-        path(
-            'M180,315 C180,315 320,220 320,130 C320,78 281,38 236,38 C205,38 180,63 180,63 C180,63 155,38 124,38 C79,38 40,78 40,130 C40,220 180,315 180,315 Z'
-        );
-
-    pointer-events:none;
-}
-
-.revealed-content{
-
-    position:absolute;
-
-    inset:6px;
-
-    z-index:2;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fffafa,
-            #f7e8eb
-        );
-
-    clip-path:
-        path(
-            'M174,305 C174,305 312,212 312,126 C312,77 275,45 233,45 C203,45 178,69 174,73 C170,69 145,45 115,45 C73,45 46,77 46,126 C46,212 174,305 174,305 Z'
-        );
-
+    min-height:100vh;
     display:flex;
-
     flex-direction:column;
-
-    justify-content:center;
-
     align-items:center;
-
+    justify-content:center;
     text-align:center;
-
-    padding:35px;
+    padding:60px 20px;
 }
 
-.invited-text{
-
+.scratch-heading{
+    font-family:"Cinzel",serif;
     font-size:14px;
-
-    font-style:italic;
-
-    color:#7a5256;
-
-    margin-bottom:8px;
+    letter-spacing:4px;
+    margin-bottom:12px;
 }
 
-.date-text{
-
-    font-size:22px;
-
-    font-weight:600;
-
-    color:#5c3a3d;
+.scratch-subheading{
+    font-family:"Great Vibes",cursive;
+    font-size:44px;
+    color:#733f58;
+    margin-bottom:10px;
 }
 
-.day-text{
-
+.scratch-instruction{
     font-size:14px;
-
-    color:#7a5256;
-
-    margin-top:5px;
+    line-height:1.8;
+    margin-bottom:25px;
 }
 
-.time-text{
-
-    font-size:13px;
-
-    color:#8c6266;
-
-    margin-top:4px;
+#scratchWrap{
+    position:relative;
+    width:min(330px,88vw);
+    aspect-ratio:1/1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-#scratch-canvas{
-
+#scratchHeart{
     position:absolute;
-
     inset:0;
-
     width:100%;
     height:100%;
-
-    z-index:5;
-
+    z-index:3;
     cursor:crosshair;
-
     touch-action:none;
-
-    clip-path:
-        path(
-            'M180,315 C180,315 320,220 320,130 C320,78 281,38 236,38 C205,38 180,63 180,63 C180,63 155,38 124,38 C79,38 40,78 40,130 C40,220 180,315 180,315 Z'
-        );
 }
 
-.scratch-sparkles{
-
+.reveal-heart{
+    width:100%;
+    height:100%;
     position:absolute;
-
-    inset:35px;
-
-    z-index:7;
-
-    pointer-events:none;
-
-    clip-path:
-        path(
-            'M145,270 C145,270 275,185 275,115 C275,75 245,50 215,50 C190,50 165,70 145,87 C125,70 100,50 75,50 C45,50 25,75 25,115 C25,185 145,270 145,270 Z'
-        );
-}
-
-.spark{
-
-    position:absolute;
-
-    width:3px;
-    height:3px;
-
-    background:#fff7fa;
-
-    border-radius:50%;
-
-    box-shadow:
-        0 0 5px rgba(255,255,255,.9);
-
-    animation:
-        sparkle 2s ease-in-out infinite;
-}
-
-.spark:nth-child(1){
-    left:22%;
-    top:25%;
-    animation-delay:.1s;
-}
-
-.spark:nth-child(2){
-    left:42%;
-    top:17%;
-    animation-delay:.7s;
-}
-
-.spark:nth-child(3){
-    left:66%;
-    top:28%;
-    animation-delay:1.1s;
-}
-
-.spark:nth-child(4){
-    left:30%;
-    top:47%;
-    animation-delay:.4s;
-}
-
-.spark:nth-child(5){
-    left:70%;
-    top:51%;
-    animation-delay:1.4s;
-}
-
-.spark:nth-child(6){
-    left:51%;
-    top:65%;
-    animation-delay:.8s;
-}
-
-.spark:nth-child(7){
-    left:19%;
-    top:63%;
-    animation-delay:1.7s;
-}
-
-@keyframes sparkle{
-
-    0%,100%{
-        opacity:.25;
-        transform:scale(.7);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.5);
-    }
-}
-
-
-/* =========================================================
-   SAVE DATE
-========================================================= */
-
-.save-date-container{
-
-    margin-top:2px;
-
-    display:flex;
-
-    justify-content:center;
-}
-
-.save-button{
-
-    border:none;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d95c73,
-            #c84760
-        );
-
-    color:white;
-
-    padding:
-        12px 27px;
-
-    min-width:175px;
-
-    border-radius:7px;
-
-    font-family:'Playfair Display',serif;
-
-    font-size:12px;
-
-    letter-spacing:1.8px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 5px 15px rgba(150,60,80,.22);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-
-    -webkit-tap-highlight-color:transparent;
-}
-
-.save-button:active{
-
-    transform:scale(.96);
-
-    box-shadow:
-        0 3px 8px rgba(150,60,80,.18);
-}
-
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-#confetti-box{
-
-    position:fixed;
-
     inset:0;
 
-    z-index:9990;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    display:none;
-}
-
-.confetti{
-
-    position:absolute;
-
-    top:-20px;
-
-    animation:
-        confettiFall linear forwards;
-}
-
-@keyframes confettiFall{
-
-    from{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:1;
-    }
-
-    to{
-
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:.15;
-    }
-}
-
-
-/* =========================================================
-   COUNTDOWN
-========================================================= */
-
-#countdown-section{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:transparent;
-}
-
-.countdown-container{
-
     display:flex;
-
+    align-items:center;
     justify-content:center;
-
-    gap:6px;
-
-    margin:
-        16px 0 5px;
-}
-
-.countdown-box{
-
-    background:rgba(255,239,242,.38);
-
-    border-radius:12px;
-
-    padding:
-        11px 5px;
-
-    width:65px;
-
-    box-shadow:
-        0 2px 5px rgba(108,36,50,.08);
-}
-
-.countdown-number{
-
-    font-size:1.35rem;
-
-    font-weight:600;
-}
-
-.countdown-label{
-
-    font-size:.55rem;
-
-    letter-spacing:1px;
-
-    margin-top:4px;
-
-    font-weight:600;
-}
-
-
-/* =========================================================
-   EVENT SECTIONS
-========================================================= */
-
-.event-video-section{
-
-    position:relative;
-
-    width:100%;
-
-    min-height:auto;
-
-    overflow:hidden;
-
-    padding:
-        34px 14px 38px;
-
-    display:flex;
-
-    justify-content:center;
-
     text-align:center;
 
-    background:transparent;
-}
-
-.event-video-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:0;
-
-    opacity:.45;
+    clip-path:path("M 165 285 C 20 190 45 65 110 55 C 145 50 165 82 165 82 C 165 82 185 50 220 55 C 285 65 310 190 165 285 Z");
 
     background:
         radial-gradient(
-            circle at 20% 18%,
-            rgba(255,255,255,.9) 0 1px,
-            transparent 2px
+            circle at 50% 40%,
+            rgba(255,255,255,.55),
+            transparent 42%
         ),
-        radial-gradient(
-            circle at 78% 28%,
-            rgba(255,255,255,.7) 0 1px,
-            transparent 2px
-        ),
-        radial-gradient(
-            circle at 42% 72%,
-            rgba(255,255,255,.7) 0 1px,
-            transparent 2px
-        ),
-        radial-gradient(
-            circle at 86% 84%,
-            rgba(255,255,255,.75) 0 1px,
-            transparent 2px
-        );
-
-    background-size:
-        130px 160px,
-        190px 210px,
-        220px 190px,
-        160px 180px;
-}
-
-.event-video-section .section-inner{
-
-    max-width:430px;
-
-    z-index:2;
-}
-
-.event-kicker{
-
-    font-family:'Cinzel',serif;
-
-    font-size:.65rem;
-
-    letter-spacing:3px;
-
-    color:#79525c;
-
-    margin-bottom:4px;
-}
-
-.event-title{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:3rem;
-
-    line-height:1.1;
-
-    font-weight:normal;
-
-    margin:
-        0 0 8px;
-
-}
-
-.event-subtitle{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:.85rem;
-
-    font-style:italic;
-
-    color:#73535b;
-
-    margin-bottom:16px;
-}
-
-.event-video-frame{
-
-    position:relative;
-
-    width:100%;
-
-    overflow:hidden;
-
-    border-radius:0;
-
-    background:transparent;
-
-    box-shadow:none;
-
-    margin:
-        0 auto 17px;
-}
-
-.event-video-frame::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
         linear-gradient(
-            120deg,
-            rgba(255,255,255,.12),
-            transparent 35%,
-            transparent 68%,
-            rgba(255,255,255,.08)
+            145deg,
+            #f3d6dc,
+            #dca0b2
         );
 
-    z-index:2;
+    z-index:1;
+}
+
+.reveal-content{
+    padding:40px 25px;
+    color:#704154;
+}
+
+.reveal-small{
+    font-family:"Cinzel",serif;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+.reveal-date{
+    font-family:"Great Vibes",cursive;
+    font-size:42px;
+    margin:8px 0;
+}
+
+.reveal-bottom{
+    font-size:13px;
+    line-height:1.7;
+}
+
+#scratchTitle{
+    transition:opacity .6s ease;
+}
+
+/* COUNTDOWN */
+
+#countdown-section{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.countdown-wrap{
+    width:100%;
+    max-width:700px;
+}
+
+.countdown-title{
+    font-family:"Cinzel",serif;
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.countdown-script{
+    font-family:"Great Vibes",cursive;
+    font-size:55px;
+    color:#704359;
+    margin-bottom:30px;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    min-width:70px;
+    padding:15px 8px;
+    border:1px solid rgba(128,91,99,.3);
+    background:rgba(255,255,255,.16);
+    backdrop-filter:blur(8px);
+}
+
+.time-number{
+    display:block;
+    font-family:"Cinzel",serif;
+    font-size:22px;
+}
+
+.time-label{
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* EVENT VIDEOS */
+
+.event-section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:55px 18px;
+    background:transparent;
 }
 
 .event-video{
-
-    display:block;
-
     width:100%;
-
-    height:auto;
-
-    max-height:78vh;
-
+    max-width:520px;
+    max-height:75vh;
     object-fit:cover;
-
-    background:transparent;
-}
-
-.event-map-button{
-
-    display:inline-block;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(108,36,50,.94),
-            rgba(133,67,82,.94)
-        );
-
-    padding:
-        11px 25px;
-
-    border-radius:6px;
-
-    font-size:.88rem;
-
-    letter-spacing:.4px;
-
+    display:block;
+    border-radius:2px;
     box-shadow:
-        0 5px 14px rgba(108,36,50,.14);
+        0 15px 45px rgba(75,50,55,.18);
 }
 
-.event-address{
-
-    font-size:.82rem;
-
-    color:#76535b;
-
-    line-height:1.5;
-
-    margin:
-        4px auto 14px;
-
-    max-width:350px;
+.event-content{
+    max-width:700px;
+    padding:30px 10px;
 }
 
-
-/* =========================================================
-   MEHFIL-E-ZEHRA
-========================================================= */
-
-#mehfil-section{
-    background:transparent;
+.event-small{
+    font-family:"Cinzel",serif;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:10px;
 }
 
-#mehfil-section .event-title{
-
-    color:#477463;
-
-    text-shadow:
-        0 1px 8px rgba(255,255,255,.7);
+.event-title{
+    font-family:"Great Vibes",cursive;
+    font-size:50px;
+    color:#71465a;
+    margin-bottom:15px;
 }
 
-#mehfil-section .event-kicker{
-
-    color:#668d7e;
+.event-date{
+    font-family:"Playfair Display",serif;
+    font-size:17px;
+    margin-bottom:8px;
 }
 
-#mehfil-section .event-subtitle{
-
-    color:#55786c;
+.event-location{
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:15px;
 }
 
-
-/* =========================================================
-   HALDI
-========================================================= */
-
-#haldi-section{
-    background:transparent;
+.map-btn{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid rgba(105,75,80,.4);
+    text-decoration:none;
+    color:#694957;
+    font-family:"Cinzel",serif;
+    font-size:10px;
+    letter-spacing:2px;
+    background:rgba(255,255,255,.12);
 }
 
-#haldi-section .event-title{
-
-    color:#8b7428;
-
-    text-shadow:
-        0 1px 8px rgba(255,255,255,.8);
-}
-
-#haldi-section .event-kicker{
-
-    color:#9c8a3c;
-}
-
-#haldi-section .event-subtitle{
-
-    color:#807033;
-}
-
-
-/* =========================================================
-   NIKKAH
-========================================================= */
-
-#nikkah-section{
-    background:transparent;
-}
-
-#nikkah-section .event-title{
-
-    color:#76543c;
-
-    text-shadow:
-        0 1px 8px rgba(255,255,255,.75);
-}
-
-#nikkah-section .event-kicker{
-
-    color:#92765a;
-}
-
-#nikkah-section .event-subtitle{
-
-    color:#765f49;
-}
-
-
-/* =========================================================
-   DRESS CODE
-========================================================= */
+/* DRESS CODE */
 
 #dress-section{
-
-    background:transparent;
-}
-
-.cute-message{
-
-    font-style:italic;
-
-    font-size:.9rem;
-
-    color:#7d424e;
-
-    line-height:1.5;
-
-    margin-bottom:17px;
-}
-
-.category-title{
-
-    font-size:1.2rem;
-
-    font-weight:600;
-
-    margin:
-        14px 0 6px;
-}
-
-.category-line{
-
-    width:40px;
-
-    height:1px;
-
-    background:#d5a5ac;
-
-    margin:
-        0 auto 8px;
-}
-
-.category-desc{
-
-    font-size:.88rem;
-
-    color:#7d424e;
-
-    line-height:1.5;
-
-    padding:
-        0 15px;
-}
-
-
-/* =========================================================
-   GIFTS
-========================================================= */
-
-.icon-container{
-
-    display:inline-flex;
-
-    justify-content:center;
+    min-height:80vh;
+    display:flex;
     align-items:center;
-
-    border:
-        1px solid #6c2432;
-
-    border-radius:50%;
-
-    width:42px;
-    height:42px;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
 }
 
-.icon-container svg{
+.dress-content{
+    max-width:650px;
+}
 
-    width:20px;
-    height:20px;
+.dress-title{
+    font-family:"Great Vibes",cursive;
+    font-size:56px;
+    color:#704359;
+    margin-bottom:20px;
+}
 
-    stroke:#6c2432;
+.dress-text{
+    font-size:15px;
+    line-height:2;
+}
 
-    fill:none;
+.color-row{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+.color-circle{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:1px solid rgba(0,0,0,.15);
+}
+
+/* GIFTS */
+
+#gifts-section{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 25px;
+}
+
+.gifts-title{
+    font-family:"Great Vibes",cursive;
+    font-size:55px;
+    color:#704359;
+    margin-bottom:20px;
 }
 
 .gifts-text{
-
-    font-style:italic;
-
-    font-size:.9rem;
-
-    color:#7d424e;
-
-    line-height:1.6;
-
-    padding:
-        0 10px;
+    font-size:15px;
+    line-height:2;
 }
 
-.arabic-blessing{
-
-    font-family:'Amiri',serif;
-
-    font-size:1.15rem;
-
-    direction:rtl;
-
-    line-height:1.8;
-
-    margin-top:12px;
-}
-
-
-/* =========================================================
-   LAST
-========================================================= */
+/* LAST */
 
 #last-section{
-
-    background:transparent;
-
-    min-height:70vh;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 25px;
 }
 
-.wavy-line{
-
-    width:100%;
-
-    max-width:300px;
-
-    margin:10px auto;
+.last-script{
+    font-family:"Great Vibes",cursive;
+    font-size:68px;
+    color:#704359;
+    margin-bottom:15px;
 }
 
-.celebrate-text{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:2.6rem;
-
-    color:#6c2432;
-
-    line-height:1.3;
-
-    margin:
-        10px 0;
+.last-names{
+    font-family:"Cinzel",serif;
+    letter-spacing:4px;
+    font-size:15px;
 }
 
-.names-text{
-
-    font-style:italic;
-
-    font-size:1.4rem;
-
-    color:#6c2432;
-
-    margin-top:18px;
+canvas{
+    max-width:100%;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:480px){
-
-    #opening-screen,
-    #opening-poster,
-    #opening-video{
-
-        width:100vw;
-
-        height:100dvh;
-
-        min-height:100svh;
-    }
-
-    .invitation-section{
-
-        padding:
-            20px 14px;
-    }
+@media(max-width:600px){
 
     .script-title{
-
-        font-size:2.25rem;
+        font-size:50px;
     }
 
-    .honoured-text{
-
-        font-size:24px;
+    .ayat-script{
+        font-size:45px;
     }
 
-    .countdown-box{
-
-        width:62px;
+    .scratch-subheading{
+        font-size:39px;
     }
 
-    .heart-wrapper{
-
-        width:min(350px,90vw);
-
-        height:min(350px,90vw);
-    }
-
-    .event-video-section{
-
-        padding:
-            30px 12px 34px;
+    .countdown-script{
+        font-size:47px;
     }
 
     .event-title{
-
-        font-size:2.65rem;
+        font-size:45px;
     }
 
-    .event-video{
-
-        max-height:72vh;
+    .dress-title,
+    .gifts-title{
+        font-size:50px;
     }
 
-    #music-button{
-
-        right:14px;
-
-        bottom:14px;
-
-        width:40px;
-
-        height:40px;
+    .last-script{
+        font-size:58px;
     }
 
-}
-
-
-/* =========================================================
-   ROYAL SHINE
-========================================================= */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:999;
-
-    opacity:.55;
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.8) 0 1px,
-            transparent 1.8px
-        ),
-
-        radial-gradient(
-            circle,
-            rgba(255,235,190,.55) 0 1px,
-            transparent 1.8px
-        );
-
-    background-size:
-        170px 190px,
-        260px 230px;
-
-    background-position:
-        20px 10px,
-        90px 60px;
-
-    animation:
-        royalShine 7s linear infinite;
-}
-
-@keyframes royalShine{
-
-    0%{
-        transform:translateY(0);
-        opacity:.3;
-    }
-
-    50%{
-        opacity:.65;
-    }
-
-    100%{
-        transform:translateY(-190px);
-        opacity:.3;
-    }
 }
 
 </style>
-
 </head>
-
 
 <body class="locked">
 
+<!-- OPENING -->
 
-<!-- =======================================================
-     OPENING
-======================================================= -->
-
-<section id="opening-screen">
+<div id="opening-screen">
 
     <img
-        id="opening-poster"
+        id="envelopePoster"
         src="./open1.jpg"
-        alt=""
+        alt="Wedding Invitation"
     >
 
     <video
-        id="opening-video"
+        id="envelopeVideo"
         muted
         playsinline
         webkit-playsinline
         preload="auto"
-        disablepictureinpicture
-        controlslist="nodownload noplaybackrate"
     >
-
-        <source
-            src="./open.mp4"
-            type="video/mp4"
-        >
-
+        <source src="./open.mp4" type="video/mp4">
     </video>
 
-    <div id="opening-tap"></div>
+    <div id="tapOverlay">
+        <div id="tapText">Tap to Open</div>
+    </div>
 
-</section>
+</div>
 
 
-<!-- =======================================================
-     CURTAINS
-======================================================= -->
+<!-- CURTAINS -->
 
 <section id="curtain-section">
 
@@ -1781,158 +770,71 @@ body::before{
         playsinline
         webkit-playsinline
         preload="auto"
-        disablepictureinpicture
-        controlslist="nodownload noplaybackrate"
     >
-
-        <source
-            src="./curtains.mp4"
-            type="video/mp4"
-        >
-
+        <source src="./curtains.mp4" type="video/mp4">
     </video>
 
     <div class="curtain-soft-layer"></div>
 
-    <div id="scrollHint">
-
-        <div class="scroll-text">
-            SCROLL
-        </div>
-
-        <div class="scroll-arrow">
-            ↓
-        </div>
-
+    <div class="scroll-hint" id="scrollHint">
+        SCROLL TO DISCOVER
     </div>
 
 </section>
 
 
-<!-- =======================================================
-     MUSIC
-========================================================= -->
+<!-- MUSIC -->
 
-<button
-    id="music-button"
-    type="button"
-    aria-label="Music"
->
-    ♪
-</button>
+<button id="musicBtn">♫</button>
 
 
-<!-- =======================================================
-     HONOURED
-========================================================= -->
+<!-- HONOURED -->
 
-<section
-    class="invitation-section"
-    id="honoured-section"
->
+<section id="honoured-section">
 
-    <div
-        class="global-petals"
-        id="honoured-section-petals"
-    ></div>
+    <div class="honoured-content">
 
-    <div class="section-inner">
-
-        <div class="honoured-divider">
-
-            <span class="honoured-heart">
-                ♥
-            </span>
-
+        <div class="small-title">
+            TO OUR HONOURED GUESTS
         </div>
-
-        <div class="honoured-text">
-
-            We are honored to welcome you to the
-
-            <br>
-
-            Wedding ceremony of Zainab &amp; Mizan
-
-            <br>
-
-            As they begin their journey together in faith
-
-            <br>
-
-            and love,
-
-            <br><br>
-
-            we thank you for being part of this
-
-            <br>
-
-            blessed occasion
-
-            <span class="red-heart">
-                ❤️
-            </span>
-
-        </div>
-
-        <div class="honoured-divider">
-
-            <span class="honoured-heart">
-                ♥
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     AYAT
-======================================================= -->
-
-<section
-    class="invitation-section"
-    id="ayat-section"
->
-
-    <div
-        class="global-petals"
-        id="ayat-section-petals"
-    ></div>
-
-    <div class="section-inner">
 
         <div class="script-title">
-            A Blessed Union
+            With Love &amp; Joy
         </div>
 
-        <div class="divider">
-            ♥
+        <p class="body-text">
+            Together with our families, we invite you to share
+            in the joy, blessings and beautiful beginning of our
+            forever.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- AYAT -->
+
+<section id="ayat-section">
+
+    <div class="ayat-box">
+
+        <div class="ayat-heading">
+            A BLESSED UNION
         </div>
 
-        <div class="arabic-text">
-
-            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ
-            أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
-            مَّوَدَّةً وَرَحْمَةً
-
+        <div class="ayat-script">
+            Two souls, one beautiful journey
         </div>
 
-        <div class="verse-translation">
+        <div class="arabic">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </div>
 
-            "And of His signs is that He created for you from yourselves
-            mates that you may find tranquility in them, and He placed
-            between you affection and mercy."
-
-            <br>
-
-            <span style="font-size:.8rem;">
-                [Surah Ar-Rum: 21]
-            </span>
-
+        <div class="translation">
+            “And among His signs is that He created for you spouses
+            from among yourselves so that you may find tranquility
+            in them, and He placed between you affection and mercy.”
         </div>
 
     </div>
@@ -1940,174 +842,89 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     SCRATCH
-======================================================= -->
+<!-- SCRATCH -->
 
-<section
-    class="invitation-section"
-    id="scratch-section"
->
+<section id="scratch-section">
+
+    <div class="scratch-heading">
+        OUR SPECIAL DAY
+    </div>
 
     <div
-        class="global-petals"
-        id="scratch-section-petals"
-    ></div>
+        class="scratch-subheading"
+        id="scratchTitle"
+    >
+        The Date to Remember
+    </div>
 
-    <div class="section-inner">
+    <p class="scratch-instruction">
+        Scratch gently to discover our special date.
+    </p>
 
-        <div class="scratch-title">
-            Our Special Day
-        </div>
+    <div id="scratchWrap">
 
-        <div class="heart-wrapper">
+        <div class="reveal-heart">
 
-            <div class="heart-border"></div>
+            <div class="reveal-content">
 
-            <div class="revealed-content">
-
-                <div class="invited-text">
-                    You're Invited!
+                <div class="reveal-small">
+                    OUR BIG DAY
                 </div>
 
-                <div class="date-text">
+                <div class="reveal-date">
                     November 29, 2026
                 </div>
 
-                <div class="day-text">
-                    Sunday
+                <div class="reveal-bottom">
+                    Sunday<br>
+                    The beginning of a beautiful story.
                 </div>
-
-                <div class="time-text">
-                    Our Special Day
-                </div>
-
-            </div>
-
-            <canvas
-                id="scratch-canvas"
-                width="360"
-                height="360"
-            ></canvas>
-
-            <div class="scratch-sparkles">
-
-                <span class="spark"></span>
-                <span class="spark"></span>
-                <span class="spark"></span>
-                <span class="spark"></span>
-                <span class="spark"></span>
-                <span class="spark"></span>
-                <span class="spark"></span>
 
             </div>
 
         </div>
 
-        <div class="save-date-container">
-
-            <button
-                class="save-button"
-                id="saveDateButton"
-                type="button"
-            >
-                SAVE THE DATE
-            </button>
-
-        </div>
+        <canvas id="scratchHeart"></canvas>
 
     </div>
 
 </section>
 
 
-<div id="confetti-box"></div>
+<!-- COUNTDOWN -->
 
+<section id="countdown-section">
 
-<!-- =======================================================
-     COUNTDOWN ONLY
-======================================================= -->
+    <div class="countdown-wrap">
 
-<section
-    class="invitation-section"
-    id="countdown-section"
->
-
-    <div
-        class="global-petals"
-        id="countdown-section-petals"
-    ></div>
-
-    <div class="section-inner">
-
-        <div class="script-title">
-            Counting Down to Forever
+        <div class="countdown-title">
+            COUNTING THE MOMENTS
         </div>
 
-        <div class="divider">
-            ♥
+        <div class="countdown-script">
+            Until Our Forever
         </div>
 
-        <div class="countdown-container">
+        <div id="countdown">
 
-            <div class="countdown-box">
-
-                <div
-                    class="countdown-number"
-                    id="days"
-                >
-                    00
-                </div>
-
-                <div class="countdown-label">
-                    DAYS
-                </div>
-
+            <div class="time-box">
+                <span class="time-number" id="days">00</span>
+                <span class="time-label">DAYS</span>
             </div>
 
-            <div class="countdown-box">
-
-                <div
-                    class="countdown-number"
-                    id="hours"
-                >
-                    00
-                </div>
-
-                <div class="countdown-label">
-                    HOURS
-                </div>
-
+            <div class="time-box">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">HOURS</span>
             </div>
 
-            <div class="countdown-box">
-
-                <div
-                    class="countdown-number"
-                    id="minutes"
-                >
-                    00
-                </div>
-
-                <div class="countdown-label">
-                    MINUTES
-                </div>
-
+            <div class="time-box">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">MINUTES</span>
             </div>
 
-            <div class="countdown-box">
-
-                <div
-                    class="countdown-number"
-                    id="seconds"
-                >
-                    00
-                </div>
-
-                <div class="countdown-label">
-                    SECONDS
-                </div>
-
+            <div class="time-box">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">SECONDS</span>
             </div>
 
         </div>
@@ -2117,67 +934,49 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     MEHFIL-E-ZEHRA
-======================================================= -->
+<!-- MEHFIL-E-ZEHRA -->
 
 <section
-    class="event-video-section"
     id="mehfil-section"
+    class="event-section"
 >
 
-    <div
-        class="global-petals"
-        id="mehfil-petals"
-    ></div>
+    <video
+        class="event-video"
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="metadata"
+    >
+        <source src="./milad.mp4" type="video/mp4">
+    </video>
 
-    <div class="section-inner">
+    <div class="event-content">
 
-        <div class="event-kicker">
-            A BEAUTIFUL EVENING
+        <div class="event-small">
+            MEHFIL-E-ZEHRA
         </div>
 
         <div class="event-title">
-            Mehfil-e-Zehra
+            A Blessed Evening
         </div>
 
-        <div class="event-subtitle">
-            An evening of love, remembrance and blessings
+        <div class="event-date">
+            November 27, 2026
         </div>
 
-        <div class="event-video-frame">
-
-            <video
-                class="event-video"
-                id="milad-video"
-                muted
-                playsinline
-                webkit-playsinline
-                autoplay
-                loop
-                preload="auto"
-            >
-
-                <source
-                    src="./milad.mp4"
-                    type="video/mp4"
-                >
-
-            </video>
-
-        </div>
-
-        <div class="event-address">
-            Sarovar Portico, Ahmedabad
+        <div class="event-location">
+            Sarovar Portico<br>
+            Ahmedabad
         </div>
 
         <a
-            class="event-map-button"
+            class="map-btn"
             href="https://www.google.com/maps/search/?api=1&query=Sarovar+Portico+Ahmedabad"
             target="_blank"
-            rel="noopener"
         >
-            View Sarovar Portico on Google Maps
+            VIEW ON GOOGLE MAPS
         </a>
 
     </div>
@@ -2185,65 +984,36 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     HALDI
-======================================================= -->
+<!-- HALDI -->
 
 <section
-    class="event-video-section"
     id="haldi-section"
+    class="event-section"
 >
 
-    <div
-        class="global-petals"
-        id="haldi-petals"
-    ></div>
+    <video
+        class="event-video"
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="metadata"
+    >
+        <source src="./haldi.mp4" type="video/mp4">
+    </video>
 
-    <div class="section-inner">
+    <div class="event-content">
 
-        <div class="event-kicker">
-            WITH LOVE &amp; JOY
+        <div class="event-small">
+            HALDI
         </div>
 
         <div class="event-title">
-            Haldi
+            A Golden Celebration
         </div>
 
-        <div class="event-subtitle">
-            A beautiful celebration filled with sunshine and happiness
-        </div>
-
-        <div class="event-video-frame">
-
-            <video
-                class="event-video"
-                id="haldi-video"
-                muted
-                playsinline
-                webkit-playsinline
-                autoplay
-                loop
-                preload="auto"
-            >
-
-                <source
-                    src="./haldi.mp4"
-                    type="video/mp4"
-                >
-
-            </video>
-
-        </div>
-
-        <div class="event-kicker" style="margin-top:8px;">
-            AT OUR RESIDENCE
-        </div>
-
-        <div
-            class="event-subtitle"
-            style="margin-bottom:0;"
-        >
-            With our loved ones, surrounded by warmth and joy
+        <div class="event-date">
+            November 28, 2026
         </div>
 
     </div>
@@ -2251,68 +1021,49 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     NIKKAH
-======================================================= -->
+<!-- NIKKAH -->
 
 <section
-    class="event-video-section"
     id="nikkah-section"
+    class="event-section"
 >
 
-    <div
-        class="global-petals"
-        id="nikkah-petals"
-    ></div>
+    <video
+        class="event-video"
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        preload="metadata"
+    >
+        <source src="./nikkah.mp4" type="video/mp4">
+    </video>
 
-    <div class="section-inner">
+    <div class="event-content">
 
-        <div class="event-kicker">
-            THE SACRED CEREMONY
+        <div class="event-small">
+            NIKKAH
         </div>
 
         <div class="event-title">
-            Nikkah
+            Our Forever Begins
         </div>
 
-        <div class="event-subtitle">
-            The beginning of a beautiful journey together
+        <div class="event-date">
+            November 29, 2026
         </div>
 
-        <div class="event-video-frame">
-
-            <video
-                class="event-video"
-                id="nikkah-video"
-                muted
-                playsinline
-                webkit-playsinline
-                autoplay
-                loop
-                preload="auto"
-            >
-
-                <source
-                    src="./nikkah.mp4"
-                    type="video/mp4"
-                >
-
-            </video>
-
-        </div>
-
-        <div class="event-address">
-            YMCA Club, Sarkhej - Gandhinagar Hwy,
-            Makarba, Ahmedabad, Gujarat 380015, India
+        <div class="event-location">
+            YMCA Club<br>
+            Ahmedabad
         </div>
 
         <a
-            class="event-map-button"
-            href="https://www.google.com/maps/search/?api=1&query=YMCA+Club%2C+Sarkhej+-+Gandhinagar+Hwy%2C+Makarba%2C+Ahmedabad%2C+Gujarat+380015%2C+India"
+            class="map-btn"
+            href="https://www.google.com/maps/search/?api=1&query=YMCA+Club+Ahmedabad"
             target="_blank"
-            rel="noopener"
         >
-            View YMCA Club on Google Maps
+            VIEW ON GOOGLE MAPS
         </a>
 
     </div>
@@ -2320,59 +1071,52 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     DRESS CODE
-======================================================= -->
+<!-- DRESS CODE -->
 
-<section
-    class="invitation-section"
-    id="dress-section"
->
+<section id="dress-section">
 
-    <div
-        class="global-petals"
-        id="dress-section-petals"
-    ></div>
+    <div class="dress-content">
 
-    <div class="section-inner">
-
-        <div class="script-title">
-            Dress Code
+        <div class="small-title">
+            DRESS CODE
         </div>
 
-        <div class="divider">
-            ♥
+        <div class="dress-title">
+            Elegance in Every Detail
         </div>
 
-        <div class="cute-message">
-
-            "We can't wait to celebrate our special day
-            with you in style! Here is a little guide
-            for our favorite people."
-
+        <div class="dress-text">
+            Come dressed in your favourite festive colours
+            and celebrate this beautiful occasion with us.
         </div>
 
-        <div class="category-title">
-            Women
-        </div>
+        <div class="color-row">
 
-        <div class="category-line"></div>
+            <div
+                class="color-circle"
+                style="background:#111111;"
+            ></div>
 
-        <div class="category-desc">
-            Elegant formal attire in pastel or jewel tones
-        </div>
+            <div
+                class="color-circle"
+                style="background:#e8d5c4;"
+            ></div>
 
-        <div
-            class="category-title"
-            style="margin-top:22px;"
-        >
-            Men
-        </div>
+            <div
+                class="color-circle"
+                style="background:#d9a3a9;"
+            ></div>
 
-        <div class="category-line"></div>
+            <div
+                class="color-circle"
+                style="background:#d7dcbf;"
+            ></div>
 
-        <div class="category-desc">
-            Suit or traditional formal wear
+            <div
+                class="color-circle"
+                style="background:#f0dfad;"
+            ></div>
+
         </div>
 
     </div>
@@ -2380,68 +1124,19 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     GIFTS
-======================================================= -->
+<!-- GIFTS -->
 
-<section
-    class="invitation-section"
-    id="gifts-section"
->
+<section id="gifts-section">
 
-    <div
-        class="global-petals"
-        id="gifts-section-petals"
-    ></div>
+    <div>
 
-    <div class="section-inner">
-
-        <div class="icon-container">
-
-            <svg
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-
-                <path
-                    d="
-                        M20 12v10H4V12
-                        M2 7h20v5H2V7z
-                        M12 22V7
-                        M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z
-                        M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z
-                    "
-                ></path>
-
-            </svg>
-
-        </div>
-
-        <div class="script-title">
-            Gifts
-        </div>
-
-        <div class="divider">
-            ♥
+        <div class="gifts-title">
+            Your Presence is Our Gift
         </div>
 
         <div class="gifts-text">
-
-            "No gift is better than your blessings.
-            Your heartfelt duas and loving presence
-            are all we cherish as we begin this new
-            journey under the blessed shade and
-            teachings of the Ahlulbayt."
-
-        </div>
-
-        <div class="arabic-blessing">
-
-            بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا
-            وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
-
+            Your love, blessings and presence on our special day
+            mean more to us than anything else.
         </div>
 
     </div>
@@ -2449,73 +1144,19 @@ body::before{
 </section>
 
 
-<!-- =======================================================
-     LAST
-======================================================= -->
+<!-- LAST -->
 
-<section
-    class="invitation-section"
-    id="last-section"
->
+<section id="last-section">
 
-    <div
-        class="global-petals"
-        id="last-petals"
-    ></div>
+    <div>
 
-    <div class="section-inner">
-
-        <svg
-            class="wavy-line"
-            viewBox="0 0 300 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <path
-                d="M5 10C50 2 100 18 150 10C200 2 250 18 295 10"
-                stroke="#b87a86"
-                stroke-width="1.2"
-                stroke-linecap="round"
-            />
-
-            <circle cx="150" cy="10" r="2" fill="#b87a86" />
-            <circle cx="75" cy="13" r="1.5" fill="#b87a86" />
-            <circle cx="225" cy="7" r="1.5" fill="#b87a86" />
-
-        </svg>
-
-        <div class="celebrate-text">
-            We can't wait to celebrate<br>
-            <span style="font-size:2.4rem;margin-top:5px;display:inline-block;">
-                with you!
-            </span>
+        <div class="last-script">
+            Thank You
         </div>
 
-        <div class="names-text">
-            Hussain ali rajjabali kanani &amp; kanani family
+        <div class="last-names">
+            ZAINAB &amp; MIZAN
         </div>
-
-        <svg
-            class="wavy-line"
-            viewBox="0 0 300 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style="margin-top:25px;"
-        >
-
-            <path
-                d="M5 10C50 2 100 18 150 10C200 2 250 18 295 10"
-                stroke="#b87a86"
-                stroke-width="1.2"
-                stroke-linecap="round"
-            />
-
-            <circle cx="150" cy="10" r="2" fill="#b87a86" />
-            <circle cx="75" cy="7" r="1.5" fill="#b87a86" />
-            <circle cx="225" cy="13" r="1.5" fill="#b87a86" />
-
-        </svg>
 
     </div>
 
@@ -2524,21 +1165,19 @@ body::before{
 
 <script>
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+/* OPENING */
 
 const openingScreen =
     document.getElementById("opening-screen");
 
-const openingPoster =
-    document.getElementById("opening-poster");
+const envelopePoster =
+    document.getElementById("envelopePoster");
 
-const openingVideo =
-    document.getElementById("opening-video");
+const envelopeVideo =
+    document.getElementById("envelopeVideo");
 
-const openingTap =
-    document.getElementById("opening-tap");
+const tapOverlay =
+    document.getElementById("tapOverlay");
 
 const curtainVideo =
     document.getElementById("curtain-video");
@@ -2546,1019 +1185,120 @@ const curtainVideo =
 const scrollHint =
     document.getElementById("scrollHint");
 
-
-/* =========================================================
-   MUSIC
-========================================================= */
-
 const music =
     new Audio("./alikesath.mp3");
 
 music.loop = true;
-music.preload = "auto";
 
-const musicButton =
-    document.getElementById("music-button");
-
-let musicPlaying = false;
+let opened = false;
 
 
-function updateMusicIcon(){
+/* OPEN INVITATION */
 
-    musicButton.innerHTML =
-        musicPlaying ? "♫" : "♪";
-}
+tapOverlay.addEventListener("click", () => {
 
+    if(opened) return;
 
-musicButton.addEventListener(
-    "click",
-    async function(){
+    opened = true;
 
-        if(musicPlaying){
+    music.play().catch(()=>{});
 
-            music.pause();
+    envelopePoster.style.display = "none";
 
-            musicPlaying = false;
+    envelopeVideo.style.display = "block";
 
-        }else{
+    envelopeVideo.currentTime = 0;
 
-            try{
+    envelopeVideo.play().catch(()=>{});
 
-                await music.play();
-
-                musicPlaying = true;
-
-            }catch(error){
-
-                console.log(
-                    "Music playback blocked:",
-                    error
-                );
-
-            }
-
-        }
-
-        updateMusicIcon();
-
-    }
-);
+});
 
 
-/* =========================================================
-   PRELOAD CURTAINS
-========================================================= */
+/* AFTER OPENING VIDEO */
 
-curtainVideo.pause();
+envelopeVideo.addEventListener("ended", () => {
 
-try{
+    startCurtainTransition();
 
-    curtainVideo.currentTime = 0;
-
-}catch(error){}
+});
 
 
-/* =========================================================
-   OPENING TAP
-========================================================= */
-
-openingTap.addEventListener(
-    "click",
-    async function(){
-
-        openingTap.style.pointerEvents =
-            "none";
-
-        openingPoster.style.opacity =
-            "0";
-
-        try{
-
-            music.currentTime = 0;
-
-            await music.play();
-
-            musicPlaying = true;
-
-            updateMusicIcon();
-
-        }catch(error){
-
-            console.log(
-                "Music playback waiting:",
-                error
-            );
-
-        }
-
-        openingVideo.style.display =
-            "block";
-
-        requestAnimationFrame(
-            function(){
-
-                openingVideo.style.opacity =
-                    "1";
-
-            }
-        );
-
-        try{
-
-            await openingVideo.play();
-
-        }catch(error){
-
-            console.log(
-                "Opening video issue:",
-                error
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   OPENING → CURTAINS
-========================================================= */
-
-let curtainStarted = false;
-
+/* START CURTAINS */
 
 function startCurtainTransition(){
 
-    if(curtainStarted){
-        return;
-    }
+    curtainVideo.currentTime = 0;
 
-    curtainStarted = true;
+    curtainVideo.play().catch(()=>{});
 
-    try{
+    openingScreen.style.opacity = "0";
 
-        curtainVideo.currentTime = 0;
+    document.body.classList.remove("locked");
 
-    }catch(error){}
+    setTimeout(() => {
 
+        openingScreen.style.display = "none";
 
-    curtainVideo.play().catch(
-        function(error){
-
-            console.log(
-                "Curtains playback issue:",
-                error
-            );
-
-        }
-    );
-
-
-    setTimeout(
-        function(){
-
-            openingScreen.style.opacity =
-                "0";
-
-            document.body.classList.remove(
-                "locked"
-            );
-
-        },
-        80
-    );
-
-
-    setTimeout(
-        function(){
-
-            openingScreen.style.display =
-                "none";
-
-        },
-        1300
-    );
+    },1300);
 
 }
 
 
-/* =========================================================
-   OPENING VIDEO DETECTION
-========================================================= */
+/* CURTAIN END */
 
-openingVideo.addEventListener(
-    "timeupdate",
-    function(){
-
-        if(
-            openingVideo.duration &&
-            isFinite(openingVideo.duration)
-        ){
-
-            const remaining =
-                openingVideo.duration -
-                openingVideo.currentTime;
-
-            if(
-                remaining <= .35 &&
-                !curtainStarted
-            ){
-
-                startCurtainTransition();
-
-            }
-
-        }
-
-    }
-);
-
-
-openingVideo.addEventListener(
-    "ended",
-    function(){
-
-        if(!curtainStarted){
-
-            startCurtainTransition();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CURTAINS
-   FREEZE EXACTLY 0.03 SECONDS BEFORE END
-========================================================= */
-
-let curtainFrozen = false;
-
-
-curtainVideo.addEventListener(
-    "timeupdate",
-    function(){
-
-        if(curtainFrozen){
-            return;
-        }
-
-        if(
-            curtainVideo.duration &&
-            isFinite(curtainVideo.duration)
-        ){
-
-            const freezeAt =
-                curtainVideo.duration - 0.03;
-
-            if(
-                curtainVideo.currentTime >=
-                freezeAt
-            ){
-
-                curtainFrozen = true;
-
-                try{
-
-                    curtainVideo.currentTime =
-                        freezeAt;
-
-                }catch(error){}
-
-                curtainVideo.pause();
-
-                document.body.classList.remove(
-                    "locked"
-                );
-
-                scrollHint.classList.add(
-                    "show"
-                );
-
-            }
-
-        }
-
-    }
-);
-
-
-curtainVideo.addEventListener(
-    "ended",
-    function(){
-
-        if(!curtainFrozen){
-
-            curtainVideo.pause();
-
-            curtainFrozen = true;
-
-            scrollHint.classList.add(
-                "show"
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SCRATCH
-========================================================= */
-
-const scratchCanvas =
-    document.getElementById(
-        "scratch-canvas"
-    );
-
-const scratchCtx =
-    scratchCanvas.getContext(
-        "2d",
-        {
-            willReadFrequently:true
-        }
-    );
-
-
-let scratchDrawing = false;
-let scratchRevealed = false;
-let lastX = null;
-let lastY = null;
-let lastProgressCheck = 0;
-
-
-/* =========================================================
-   SCRATCH SURFACE
-========================================================= */
-
-const scratchGradient =
-    scratchCtx.createRadialGradient(
-        110,
-        80,
-        20,
-        180,
-        180,
-        250
-    );
-
-scratchGradient.addColorStop(
-    0,
-    "#d58b98"
-);
-
-scratchGradient.addColorStop(
-    .35,
-    "#a94f63"
-);
-
-scratchGradient.addColorStop(
-    .72,
-    "#7d3044"
-);
-
-scratchGradient.addColorStop(
-    1,
-    "#541b2b"
-);
-
-
-scratchCtx.fillStyle =
-    scratchGradient;
-
-
-scratchCtx.fillRect(
-    0,
-    0,
-    scratchCanvas.width,
-    scratchCanvas.height
-);
-
-
-/* =========================================================
-   SHINY PARTICLES
-========================================================= */
-
-for(
-    let i = 0;
-    i < 700;
-    i++
-){
-
-    const x =
-        Math.random() *
-        scratchCanvas.width;
-
-    const y =
-        Math.random() *
-        scratchCanvas.height;
-
-    const radius =
-        Math.random() * 1.1;
-
-    scratchCtx.globalAlpha =
-        Math.random() * .45 + .15;
-
-    scratchCtx.fillStyle =
-        Math.random() > .25
-        ? "#ffffff"
-        : "#f2c4cc";
-
-    scratchCtx.beginPath();
-
-    scratchCtx.arc(
-        x,
-        y,
-        radius,
-        0,
-        Math.PI * 2
-    );
-
-    scratchCtx.fill();
-}
-
-scratchCtx.globalAlpha = 1;
-
-
-/* =========================================================
-   SCRATCH POSITION
-========================================================= */
-
-function getScratchPosition(event){
-
-    const rect =
-        scratchCanvas.getBoundingClientRect();
-
-    return{
-
-        x:
-            (event.clientX - rect.left) *
-            (
-                scratchCanvas.width /
-                rect.width
-            ),
-
-        y:
-            (event.clientY - rect.top) *
-            (
-                scratchCanvas.height /
-                rect.height
-            )
-
-    };
-
-}
-
-
-/* =========================================================
-   FAST SCRATCH
-========================================================= */
-
-function scratch(event){
+curtainVideo.addEventListener("timeupdate", () => {
 
     if(
-        !scratchDrawing ||
-        scratchRevealed
+        curtainVideo.duration &&
+        curtainVideo.currentTime >= curtainVideo.duration - 0.03
     ){
 
-        return;
+        curtainVideo.pause();
+
+        curtainVideo.currentTime =
+            curtainVideo.duration - 0.03;
+
+        scrollHint.classList.add("show");
 
     }
 
-
-    const position =
-        getScratchPosition(event);
+});
 
 
-    scratchCtx.globalCompositeOperation =
-        "destination-out";
+/* MUSIC BUTTON */
 
+const musicBtn =
+    document.getElementById("musicBtn");
 
-    const brushRadius = 22;
+let musicPlaying = false;
 
+musicBtn.addEventListener("click", () => {
 
-    if(
-        lastX !== null &&
-        lastY !== null
-    ){
+    if(!musicPlaying){
 
-        const dx =
-            position.x - lastX;
+        music.play().catch(()=>{});
 
-        const dy =
-            position.y - lastY;
+        musicPlaying = true;
 
-        const distance =
-            Math.sqrt(
-                dx * dx +
-                dy * dy
-            );
-
-        const steps =
-            Math.max(
-                1,
-                Math.ceil(
-                    distance / 5
-                )
-            );
-
-
-        for(
-            let i = 1;
-            i <= steps;
-            i++
-        ){
-
-            const x =
-                lastX +
-                dx * (i / steps);
-
-            const y =
-                lastY +
-                dy * (i / steps);
-
-
-            scratchCtx.beginPath();
-
-            scratchCtx.arc(
-                x,
-                y,
-                brushRadius,
-                0,
-                Math.PI * 2
-            );
-
-            scratchCtx.fill();
-
-        }
+        musicBtn.textContent = "♫";
 
     }else{
 
-        scratchCtx.beginPath();
+        music.pause();
 
-        scratchCtx.arc(
-            position.x,
-            position.y,
-            brushRadius,
-            0,
-            Math.PI * 2
-        );
+        musicPlaying = false;
 
-        scratchCtx.fill();
+        musicBtn.textContent = "♪";
 
     }
 
+});
 
-    lastX = position.x;
-    lastY = position.y;
 
-
-    const now =
-        performance.now();
-
-
-    if(
-        now - lastProgressCheck > 120
-    ){
-
-        lastProgressCheck = now;
-
-        checkScratchProgress();
-
-    }
-
-}
-
-
-/* =========================================================
-   SCRATCH PROGRESS
-========================================================= */
-
-function checkScratchProgress(){
-
-    if(scratchRevealed){
-        return;
-    }
-
-
-    const imageData =
-        scratchCtx.getImageData(
-            0,
-            0,
-            scratchCanvas.width,
-            scratchCanvas.height
-        );
-
-
-    const pixels =
-        imageData.data;
-
-
-    let transparent = 0;
-    let checked = 0;
-
-
-    for(
-        let i = 3;
-        i < pixels.length;
-        i += 40
-    ){
-
-        checked++;
-
-        if(
-            pixels[i] < 80
-        ){
-
-            transparent++;
-
-        }
-
-    }
-
-
-    const percentage =
-        (transparent / checked) * 100;
-
-
-    if(
-        percentage >= 43
-    ){
-
-        revealScratch();
-
-    }
-
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-function revealScratch(){
-
-    if(scratchRevealed){
-        return;
-    }
-
-    scratchRevealed = true;
-
-
-    scratchCtx.clearRect(
-        0,
-        0,
-        scratchCanvas.width,
-        scratchCanvas.height
-    );
-
-
-    const title =
-        document.querySelector(
-            ".scratch-title"
-        );
-
-
-    title.style.opacity =
-        "0";
-
-    title.style.transform =
-        "translateY(-10px)";
-
-
-    setTimeout(
-        function(){
-
-            title.innerText =
-                "Our forever begins";
-
-            title.style.opacity =
-                "1";
-
-            title.style.transform =
-                "translateY(0)";
-
-        },
-        450
-    );
-
-
-    startConfetti();
-
-
-}
-
-
-/* =========================================================
-   POINTER EVENTS
-========================================================= */
-
-scratchCanvas.addEventListener(
-    "pointerdown",
-    function(event){
-
-        event.preventDefault();
-
-        scratchCanvas.setPointerCapture(
-            event.pointerId
-        );
-
-        scratchDrawing = true;
-
-        lastX = null;
-        lastY = null;
-
-        scratch(event);
-
-    }
-);
-
-
-scratchCanvas.addEventListener(
-    "pointermove",
-    function(event){
-
-        if(!scratchDrawing){
-            return;
-        }
-
-        event.preventDefault();
-
-        scratch(event);
-
-    }
-);
-
-
-scratchCanvas.addEventListener(
-    "pointerup",
-    function(event){
-
-        scratchDrawing = false;
-
-        lastX = null;
-        lastY = null;
-
-        try{
-
-            scratchCanvas.releasePointerCapture(
-                event.pointerId
-            );
-
-        }catch(error){}
-
-    }
-);
-
-
-scratchCanvas.addEventListener(
-    "pointercancel",
-    function(){
-
-        scratchDrawing = false;
-
-        lastX = null;
-        lastY = null;
-
-    }
-);
-
-
-/* =========================================================
-   PINK CONFETTI
-========================================================= */
-
-function startConfetti(){
-
-    const box =
-        document.getElementById(
-            "confetti-box"
-        );
-
-
-    box.innerHTML = "";
-
-    box.style.display =
-        "block";
-
-
-    const colors = [
-
-        "#d9596d",
-        "#ff8da1",
-        "#ffb6c1",
-        "#e8a5b0",
-        "#b55e6d"
-
-    ];
-
-
-    for(
-        let i = 0;
-        i < 70;
-        i++
-    ){
-
-        const piece =
-            document.createElement(
-                "div"
-            );
-
-
-        piece.className =
-            "confetti";
-
-
-        piece.style.left =
-            Math.random() * 100 +
-            "vw";
-
-
-        piece.style.backgroundColor =
-            colors[
-                Math.floor(
-                    Math.random() *
-                    colors.length
-                )
-            ];
-
-
-        const size =
-            Math.random() * 5 + 4;
-
-
-        piece.style.width =
-            size + "px";
-
-
-        piece.style.height =
-            size *
-            (
-                Math.random() > .5
-                ? 1.7
-                : 1
-            )
-            + "px";
-
-
-        piece.style.animationDuration =
-            (
-                Math.random() * 2.5 +
-                2.5
-            )
-            + "s";
-
-
-        piece.style.animationDelay =
-            Math.random() * .8 +
-            "s";
-
-
-        piece.style.borderRadius =
-            Math.random() > .5
-            ? "50%"
-            : "1px";
-
-
-        box.appendChild(
-            piece
-        );
-
-    }
-
-
-    setTimeout(
-        function(){
-
-            box.style.display =
-                "none";
-
-        },
-        6500
-    );
-
-}
-
-
-/* =========================================================
-   SAVE THE DATE
-========================================================= */
-
-const saveDateButton =
-    document.getElementById(
-        "saveDateButton"
-    );
-
-
-saveDateButton.addEventListener(
-    "click",
-    function(){
-
-        const startDate =
-            "20261129";
-
-        const endDate =
-            "20261130";
-
-        const calendarTitle =
-            "Mizan & Zainab — Wedding";
-
-        const calendarDescription =
-            "Save the date for Mizan & Zainab's wedding.";
-
-        const calendarLocation =
-            "YMCA Club, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015, India";
-
-        const dtStamp =
-            new Date()
-            .toISOString()
-            .replace(/[-:]/g,"")
-            .replace(/\.\d{3}Z$/,"Z");
-
-
-        const icsContent =
-`BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Wedding Invitation//Mizan & Zainab//EN
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-UID:mizan-zainab-wedding-20261129@wedding
-DTSTAMP:${dtStamp}
-DTSTART;VALUE=DATE:${startDate}
-DTEND;VALUE=DATE:${endDate}
-SUMMARY:${calendarTitle}
-DESCRIPTION:${calendarDescription}
-LOCATION:${calendarLocation}
-STATUS:CONFIRMED
-TRANSP:TRANSPARENT
-END:VEVENT
-END:VCALENDAR`;
-
-
-        const blob =
-            new Blob(
-                [icsContent],
-                {
-                    type:
-                        "text/calendar;charset=utf-8"
-                }
-            );
-
-
-        const url =
-            URL.createObjectURL(
-                blob
-            );
-
-
-        const link =
-            document.createElement(
-                "a"
-            );
-
-
-        link.href = url;
-
-        link.download =
-            "Mizan-Zainab-Save-the-Date.ics";
-
-
-        document.body.appendChild(
-            link
-        );
-
-        link.click();
-
-        document.body.removeChild(
-            link
-        );
-
-
-        setTimeout(
-            function(){
-
-                URL.revokeObjectURL(
-                    url
-                );
-
-            },
-            1000
-        );
-
-    }
-);
-
-
-/* =========================================================
-   COUNTDOWN
-========================================================= */
+/* COUNTDOWN */
 
 const targetDate =
-    new Date(
-        "November 29, 2026 23:59:59"
-    ).getTime();
-
+    new Date("November 29, 2026 23:59:59").getTime();
 
 function updateCountdown(){
 
@@ -3568,166 +1308,87 @@ function updateCountdown(){
     const distance =
         targetDate - now;
 
-
     if(distance <= 0){
 
-        document.getElementById(
-            "days"
-        ).innerText = "00";
-
-        document.getElementById(
-            "hours"
-        ).innerText = "00";
-
-        document.getElementById(
-            "minutes"
-        ).innerText = "00";
-
-        document.getElementById(
-            "seconds"
-        ).innerText = "00";
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
         return;
-    }
 
+    }
 
     const days =
         Math.floor(
             distance /
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
+            (1000 * 60 * 60 * 24)
         );
-
 
     const hours =
         Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
-            ) /
-            (
-                1000 *
-                60 *
-                60
-            )
+            (distance %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
         );
-
 
     const minutes =
         Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60 *
-                    60
-                )
-            ) /
-            (
-                1000 *
-                60
-            )
+            (distance %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
         );
-
 
     const seconds =
         Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60
-                )
-            ) /
+            (distance %
+            (1000 * 60)) /
             1000
         );
 
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
 
-    document.getElementById(
-        "days"
-    ).innerText =
-        String(days)
-        .padStart(2,"0");
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
 
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
 
-    document.getElementById(
-        "hours"
-    ).innerText =
-        String(hours)
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "minutes"
-    ).innerText =
-        String(minutes)
-        .padStart(2,"0");
-
-
-    document.getElementById(
-        "seconds"
-    ).innerText =
-        String(seconds)
-        .padStart(2,"0");
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
 
 }
 
-
 updateCountdown();
 
-
-setInterval(
-    updateCountdown,
-    1000
-);
+setInterval(updateCountdown,1000);
 
 
-/* =========================================================
-   EVENT VIDEOS — PLAY WHEN VISIBLE
-========================================================= */
+/* EVENT VIDEO AUTOPLAY */
 
 const eventVideos =
-    document.querySelectorAll(
-        ".event-video"
-    );
+    document.querySelectorAll(".event-video");
 
-
-const eventVideoObserver =
+const videoObserver =
     new IntersectionObserver(
-        function(entries){
+        entries => {
 
-            entries.forEach(
-                function(entry){
+            entries.forEach(entry => {
 
-                    const video =
-                        entry.target;
+                const video = entry.target;
 
+                if(entry.isIntersecting){
 
-                    if(
-                        entry.isIntersecting
-                    ){
+                    video.play().catch(()=>{});
 
-                        video.play().catch(
-                            function(){}
-                        );
+                }else{
 
-                    }else{
-
-                        video.pause();
-
-                    }
+                    video.pause();
 
                 }
-            );
+
+            });
 
         },
         {
@@ -3736,86 +1397,457 @@ const eventVideoObserver =
     );
 
 
-eventVideos.forEach(
-    function(video){
+eventVideos.forEach(video => {
 
-        eventVideoObserver.observe(
-            video
+    videoObserver.observe(video);
+
+});
+
+
+/* PETALS */
+
+function createPetals(section){
+
+    for(let i = 0; i < 14; i++){
+
+        const petal =
+            document.createElement("span");
+
+        petal.className = "petal";
+
+        petal.style.left =
+            Math.random() * 100 + "%";
+
+        petal.style.animationDuration =
+            (8 + Math.random() * 8) + "s";
+
+        petal.style.animationDelay =
+            (Math.random() * 8) + "s";
+
+        section.appendChild(petal);
+
+    }
+
+}
+
+
+document.querySelectorAll("section")
+.forEach(section => {
+
+    createPetals(section);
+
+});
+
+
+/* SCRATCH HEART */
+
+const scratchCanvas =
+    document.getElementById("scratchHeart");
+
+const scratchWrap =
+    document.getElementById("scratchWrap");
+
+const scratchTitle =
+    document.getElementById("scratchTitle");
+
+const ctx =
+    scratchCanvas.getContext("2d");
+
+let scratching = false;
+
+let scratchedPixels = 0;
+
+let revealStarted = false;
+
+
+function resizeScratch(){
+
+    const rect =
+        scratchWrap.getBoundingClientRect();
+
+    const dpr =
+        window.devicePixelRatio || 1;
+
+    scratchCanvas.width =
+        rect.width * dpr;
+
+    scratchCanvas.height =
+        rect.height * dpr;
+
+    scratchCanvas.style.width =
+        rect.width + "px";
+
+    scratchCanvas.style.height =
+        rect.height + "px";
+
+    ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+    );
+
+    drawScratch();
+
+}
+
+
+function drawScratch(){
+
+    const w =
+        scratchWrap.getBoundingClientRect().width;
+
+    const h =
+        scratchWrap.getBoundingClientRect().height;
+
+    ctx.clearRect(0,0,w,h);
+
+    ctx.save();
+
+    ctx.beginPath();
+
+    ctx.moveTo(w/2,h*.82);
+
+    ctx.bezierCurveTo(
+        w*.08,h*.55,
+        w*.12,h*.18,
+        w*.34,h*.18
+    );
+
+    ctx.bezierCurveTo(
+        w*.45,h*.18,
+        w*.50,h*.29,
+        w*.50,h*.29
+    );
+
+    ctx.bezierCurveTo(
+        w*.50,h*.29,
+        w*.55,h*.18,
+        w*.66,h*.18
+    );
+
+    ctx.bezierCurveTo(
+        w*.88,h*.18,
+        w*.92,h*.55,
+        w/2,h*.82
+    );
+
+    ctx.closePath();
+
+    ctx.clip();
+
+    const gradient =
+        ctx.createLinearGradient(
+            0,
+            0,
+            w,
+            h
         );
+
+    gradient.addColorStop(
+        0,
+        "#b8798f"
+    );
+
+    gradient.addColorStop(
+        .5,
+        "#d996a9"
+    );
+
+    gradient.addColorStop(
+        1,
+        "#efc4cb"
+    );
+
+    ctx.fillStyle = gradient;
+
+    ctx.fillRect(
+        0,
+        0,
+        w,
+        h
+    );
+
+    ctx.restore();
+
+    ctx.save();
+
+    ctx.fillStyle =
+        "rgba(255,248,240,.9)";
+
+    ctx.textAlign = "center";
+
+    ctx.font =
+        "600 13px Cinzel";
+
+    ctx.fillText(
+        "GRATTEZ ICI",
+        w/2,
+        h*.47
+    );
+
+    ctx.font =
+        "12px Playfair Display";
+
+    ctx.fillText(
+        "pour révéler notre date",
+        w/2,
+        h*.53
+    );
+
+    ctx.restore();
+
+}
+
+
+function scratch(e){
+
+    const rect =
+        scratchCanvas.getBoundingClientRect();
+
+    let x;
+    let y;
+
+    if(e.touches){
+
+        x =
+            e.touches[0].clientX -
+            rect.left;
+
+        y =
+            e.touches[0].clientY -
+            rect.top;
+
+    }else{
+
+        x =
+            e.clientX -
+            rect.left;
+
+        y =
+            e.clientY -
+            rect.top;
+
+    }
+
+    ctx.globalCompositeOperation =
+        "destination-out";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        x,
+        y,
+        20,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fill();
+
+    checkReveal();
+
+}
+
+
+function checkReveal(){
+
+    if(revealStarted) return;
+
+    const imageData =
+        ctx.getImageData(
+            0,
+            0,
+            scratchCanvas.width,
+            scratchCanvas.height
+        );
+
+    let transparent = 0;
+
+    for(
+        let i = 3;
+        i < imageData.data.length;
+        i += 4
+    ){
+
+        if(imageData.data[i] < 100){
+
+            transparent++;
+
+        }
+
+    }
+
+    const percent =
+        transparent /
+        (imageData.data.length / 4);
+
+    if(percent > .43){
+
+        revealStarted = true;
+
+        scratchCanvas.style.opacity = "0";
+
+        scratchTitle.textContent =
+            "Our forever begins";
+
+        createConfetti();
+
+    }
+
+}
+
+
+scratchCanvas.addEventListener(
+    "mousedown",
+    () => {
+        scratching = true;
+    }
+);
+
+window.addEventListener(
+    "mouseup",
+    () => {
+        scratching = false;
+    }
+);
+
+scratchCanvas.addEventListener(
+    "mousemove",
+    e => {
+
+        if(scratching){
+
+            scratch(e);
+
+        }
 
     }
 );
 
+scratchCanvas.addEventListener(
+    "touchstart",
+    e => {
 
-/* =========================================================
-   PETALS
-========================================================= */
+        e.preventDefault();
 
-function createPetals(
-    layerId,
-    amount
-){
+        scratching = true;
 
-    const layer =
-        document.getElementById(
-            layerId
+        scratch(e);
+
+    },
+    {
+        passive:false
+    }
+);
+
+scratchCanvas.addEventListener(
+    "touchmove",
+    e => {
+
+        e.preventDefault();
+
+        if(scratching){
+
+            scratch(e);
+
+        }
+
+    },
+    {
+        passive:false
+    }
+);
+
+scratchCanvas.addEventListener(
+    "touchend",
+    () => {
+
+        scratching = false;
+
+    }
+);
+
+window.addEventListener(
+    "resize",
+    resizeScratch
+);
+
+resizeScratch();
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    for(let i=0;i<55;i++){
+
+        const confetti =
+            document.createElement("span");
+
+        confetti.style.position =
+            "fixed";
+
+        confetti.style.top =
+            "-10px";
+
+        confetti.style.left =
+            Math.random()*100 + "vw";
+
+        confetti.style.width =
+            "5px";
+
+        confetti.style.height =
+            "9px";
+
+        confetti.style.borderRadius =
+            "2px";
+
+        confetti.style.background =
+            Math.random() > .5
+            ? "#d88fa2"
+            : "#f3c4ce";
+
+        confetti.style.zIndex =
+            "9998";
+
+        confetti.style.pointerEvents =
+            "none";
+
+        confetti.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        const duration =
+            2.5 + Math.random()*2;
+
+        confetti.animate(
+            [
+                {
+                    transform:
+                        `translateY(0) rotate(0deg)`,
+                    opacity:1
+                },
+                {
+                    transform:
+                        `translateY(110vh) rotate(720deg)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:
+                    duration * 1000,
+                easing:"ease-in",
+                fill:"forwards"
+            }
         );
 
+        document.body.appendChild(confetti);
 
-    if(!layer){
-        return;
-    }
-
-
-    for(
-        let i = 0;
-        i < amount;
-        i++
-    ){
-
-        const petal =
-            document.createElement(
-                "span"
-            );
-
-
-        petal.className =
-            "petal";
-
-
-        petal.style.left =
-            Math.random() * 100 +
-            "%";
-
-
-        petal.style.animationDuration =
-            (
-                Math.random() * 7 +
-                7
-            ) + "s";
-
-
-        petal.style.animationDelay =
-            (
-                Math.random() * -12
-            ) + "s";
-
-
-        petal.style.opacity =
-            (
-                Math.random() * .45 +
-                .4
-            );
-
-
-        petal.style.transform =
-            "rotate(" +
-            Math.random() * 360 +
-            "deg)";
-
-
-        layer.appendChild(
-            petal
+        setTimeout(
+            () => confetti.remove(),
+            duration * 1000 + 100
         );
 
     }
@@ -3823,32 +1855,53 @@ function createPetals(
 }
 
 
-/* ALL DELICATE NON-VIDEO SECTIONS */
+/* SAVE THE DATE */
 
-[
-    "honoured-section-petals",
-    "ayat-section-petals",
-    "scratch-section-petals",
-    "countdown-section-petals",
-    "mehfil-petals",
-    "haldi-petals",
-    "nikkah-petals",
-    "dress-section-petals",
-    "gifts-section-petals",
-    "last-petals"
-].forEach(
-    function(layerId){
+function saveDate(){
 
-        createPetals(
-            layerId,
-            24
+    const start =
+        "20261129T000000";
+
+    const end =
+        "20261130T000000";
+
+    const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${start}
+DTEND:${end}
+SUMMARY:Zainab & Mizan Wedding
+DESCRIPTION:Our Wedding Day
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob =
+        new Blob(
+            [ics],
+            {
+                type:"text/calendar"
+            }
         );
 
-    }
-);
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+
+    a.download =
+        "Zainab-Mizan-Wedding.ics";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+}
 
 </script>
 
 </body>
-
 </html>
